@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>测试字体变化</title>
+    <link rel="stylesheet" type="text/css" href="css/core.css"/>
+    <style type="text/css" media="screen">
+        .font12{font-size:12px;}
+        .font14{font-size:14px;}
+        .font16{font-size:16px;}
+        .hover{color:red;}
+    </style>
+    <script type="text/javascript">
+        function click(target){
+            var c = document.getElementsByTagName("a");
+            for(var i in c){
+                c[i].className="control";
+            }
+            c[target].className="hover control";
+            var content = document.getElementById("content");
+            switch(target){
+                case 0:
+                content.className="font16";
+                break;
+                case 1:
+                content.className="font14";
+                break;
+                default:
+                content.className="font12";
+            }
+        }
+    </script>
+  </head>
+  <body>
+      <span><a href="javascript:click(0);" class="control">[大]</a> | <a href="javascript:click(1);" class="hover control">[中]</a> | <a href="javascript:click(2);" class="control">[小]</a></span>
+
+      <div id="content" class="font14">这里看看字体变化</div>
+	  <div class="footer">&copy;2013 by <a href="http://microsimple.github.io">MicroSimple</a></div>
+  </body>
+</html>
