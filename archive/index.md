@@ -1,5 +1,5 @@
 ---
-title: 文章归档
+title: Archive
 layout: page
 ---
 

@@ -29,19 +29,19 @@ links:
     desc: "Project@Github"
 
 navigations: 
-  - title: 归档
+  - title: Archive
     class: fa fa-list-ul
     href: /archive
 
-  - title: 标签
+  - title: Tags
     class: fa fa-tags
     href: /tags
 
-  - title: 关于
+  - title: About
     class: fa fa-user
     href: /about
 
-  - title: 友链
+  - title: Links
     class: fa fa-link
     href: /links
 
