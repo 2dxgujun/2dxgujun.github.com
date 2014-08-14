@@ -1,42 +1,50 @@
-﻿#代码高亮
+﻿markdown: rdiscount
 pygments: true
-#自定义插件无效（Github的默认命令）
 safe: true
-#当工程中文件有变动后，就重新组织工程内容
 auto: true
-
 permalink: /:categories/:month-:day-:year/:title.html
 name: "Jun Gu's Blog"
 markdown: rdiscount
 
 author: "Jun Gu"
-description: "记录生活中的点点滴滴,铭刻生命中的些许感动 by Simple,爱生活爱Simple"
-keywords: "一点经验,一些体验,收获心得,无言感动,MicroSimple"
+description: "记录生活中的点点滴滴,铭刻生命中的些许感动"
+keywords: "一点经验,一些体验,收获心得,无言感动"
 disqus: "2dxgujun"
 mail: "2dxgujun@gmail.com"
+
 links: 
   - title: "Github"
     name: "2dxgujun"
     url: "http://github.com/2dxgujun"
-    desc: "我的GitHub"
+    desc: "My GitHub"
+
   - title: "Mail"
     name: "2dxgujun@gmail.com"
     url: "mailto:2dxgujun@gmail.com"
-    desc: "给Jun Gu发邮件"
+    desc: "Mail to Jun Gu"
+
+  - title: "Project"
+    name: "2dxgujun.github.com"
+    url: "http://github.com/2dxgujun/2dxgujun.github.com"
+    desc: "Project@Github"
 
 navigations: 
   - title: 归档
     class: fa fa-list-ul
     href: /archive
+
   - title: 标签
     class: fa fa-tags
     href: /tags
+
   - title: 关于
     class: fa fa-user
     href: /about
+
   - title: 友链
     class: fa fa-link
     href: /links
+
   - title: Subscribe
     class: fa fa-rss
     href: /atom.xml

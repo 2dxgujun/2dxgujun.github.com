@@ -2,7 +2,7 @@
 title: 关于我
 layout: page
 ---
-![dream](/media/files/2013/12/09/dream.jpg)
+![dream](/media/files/2014/08/14/dream.jpg)
 如果你想拥有你从未有过的东西
 
 那么你必须去做你从未做过的事情
@@ -11,5 +11,4 @@ layout: page
 
 {% for link in site.links %}
 > {{link.title}}: [{{link.name}}]({{link.url}} "{{link.desc}}")
-
 {% endfor %}

@@ -2,7 +2,6 @@
 layout: default
 ---
 
-
 <div>
   <ul class="listing">
   {% for post in site.posts limit: 1 %}
@@ -12,7 +11,7 @@ layout: default
     </section>
     <section class="meta">
     <span class="time">
-      <time datetime="{{ post.createdate | date:"%Y-%m-%d %H:%M:%S" }}">{{ post.createdate | date:"%Y-%m-%d %H:%M:%S" }}</time>
+      <time datetime="{{ post.date | date:"%Y-%m-%d %H:%M:%S" }}">{{ post.date | date:"%Y-%m-%d %H:%M:%S" }}</time>
     </span>
     {% if post.tags %}
     <span class="tags">
@@ -28,20 +27,21 @@ layout: default
     </article>
   {% endfor %}
   </ul>
+
   <div class="divider"></div>
   <ul class="listing main-listing">
-    <li class="listing-seperator">今年早些时候的文章</i>
-  {% capture year %}{{ site.time | date:"%Y"}}{% endcapture %}
-  {% for post in site.posts offset:1 %}
+    <li class="listing-seperator">今年早些时候的文章</li>
+    {% capture year %}{{ site.time | date:"%Y"}}{% endcapture %}
+    {% for post in site.posts offset:1 %}
     {% capture y %}{{ post.date | date:"%Y"}}{% endcapture %}
     {% if year != y %}
     {% break %}
     {% endif %}
     <li class="listing-item">
-      <time datetime="{{ post.createdate | date:"%Y-%m-%d %H:%M:%S" }}">{{ post.createdate | date:"%Y-%m-%d %H:%M:%S" }}</time>
+      <time datetime="{{ post.date | date:"%Y-%m-%d %H:%M:%S" }}">{{ post.date | date:"%Y-%m-%d %H:%M:%S" }}</time>
       <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
     </li>
-  {% endfor %}
+    {% endfor %}
     <li class="listing-seperator"><a href="/archive">更早的文章...</a></li>
   </ul>
 </div>

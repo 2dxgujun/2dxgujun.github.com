@@ -2,26 +2,29 @@
 layout: default
 ---
 
-
 <article>
   <section class="title">
     <h2>{{ page.title }} </h2>
   </section>
+
   <section class="meta">
-  <span class="time">
-    <time datetime="{{ page.createdate | date:"%Y-%m-%d %H:%M:%S" }}">{{ page.createdate | date:"%Y-%m-%d %H:%M:%S" }}</time>
-  </span>
-  {% if page.tags %}
-  <span class="tags">
-    {% for tag in page.tags %}
-    <a href="/tags/#{{ tag }}" title="{{ tag }}">#{{ tag }}</a>
-    {% endfor %}
-  </span>
-  {% endif %}
+    <span class="time">
+      <time datetime="{{ page.createdate | date:"%Y-%m-%d %H:%M:%S" }}">{{ page.createdate | date:"%Y-%m-%d %H:%M:%S" }}</time>
+    </span>
+
+    {% if page.tags %}
+    <span class="tags">
+      {% for tag in page.tags %}
+      <a href="/tags/#{{ tag }}" title="{{ tag }}">#{{ tag }}</a>
+      {% endfor %}
+    </span>
+    {% endif %}
   </section>
+
   <section class="post">
   {{ content }}
   </section>
+
   {% if page.guid %}
   <script type="text/javascript">
       var disqus_shortname = '{{ site.disqus }}';
@@ -44,6 +47,7 @@ layout: default
           });
       };
   </script>
+
   <div class="divider">
     <span>
     {% if page.previous %}
@@ -52,8 +56,11 @@ layout: default
     <i class="fa fa-circle"></i>
     {% endif %}
     </span>
-    <span><a title="打开评论" href="javascript:leave_comment();" id="leave_comment_link"><i class="fa fa-comment-o"></i></a></span>
-    <span><a title="收起评论" href="javascript:collapse_comment();" id="collapse_comment_link" style="display:none;"><i class="fa fa-chevron-up"></i></a></span>
+
+    <span><a title="Leave comment" href="javascript:leave_comment();" id="leave_comment_link"><i class="fa fa-comment-o"></i></a></span>
+
+    <span><a title="Collapse comment" href="javascript:collapse_comment();" id="collapse_comment_link" style="display:none;"><i class="fa fa-chevron-up"></i></a></span>
+
     <span>
     {% if page.next %}
     <a title="{{ page.next.title }}" href="{{ page.next.url }}"><i class="fa fa-chevron-right"></i></a>
@@ -62,6 +69,7 @@ layout: default
     {% endif %}
     </span>
   </div>
+
   <section class="comment">
   <div id="disqus_thread"></div>
   <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
@@ -69,4 +77,4 @@ layout: default
   {% endif %}
 </article>
 
-<script type="text/javascript" >window._bd_share_config={"common":{"bdSnsKey":{"tsina":"4065044834"},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"5","bdPos":"right","bdTop":"182.5"},"image":{"viewList":["qzone","tsina","tqq","renren","t163"],"viewText":"分享到：","viewSize":"32"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","t163"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=86835285.js?cdnversion='+~(-new Date()/36e5)];</script>
+{% include bd_share.md %}

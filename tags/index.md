@@ -14,7 +14,7 @@ layout: page
   <li class="listing-seperator" id="{{ tag[0] }}">{{ tag[0] }}</li>
 {% for post in tag[1] %}
   <li class="listing-item">
-  <time datetime="{{ post.createdate | date:"%Y-%m-%d %H:%M:%S" }}">{{ post.createdate | date:"%Y-%m-%d %H:%M:%S" }}</time>
+  <time datetime="{{ post.date | date:"%Y-%m-%d %H:%M:%S" }}">{{ post.date | date:"%Y-%m-%d %H:%M:%S" }}</time>
   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
   </li>
 {% endfor %}
