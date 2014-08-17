@@ -33,7 +33,7 @@ body {
   color: #555;
   background-color: #f9f9f9; }
 
-ul {
+ul, ol {
   list-style-position: inside; }
 
 hr {
