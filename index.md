@@ -3,7 +3,6 @@ layout: default
 ---
 
 <div>
-  <ul class="listing">
   {% for post in site.posts limit: 1 %}
   <article class="content">
     <section class="title">
@@ -21,12 +20,13 @@ layout: default
     </span>
     {% endif %}
     </section>
+
     <section class="post">
     {{ post.content }}
     </section>
-    </article>
+
+  </article>
   {% endfor %}
-  </ul>
 
   <div class="divider"></div>
   <ul class="listing main-listing">

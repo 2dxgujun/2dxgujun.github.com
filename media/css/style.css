@@ -116,6 +116,15 @@ header {
   #content .main-listing {
     margin-bottom: 2em; }
 
+ul li {
+  list-style-type: circle;
+  padding-left: 1em;
+}
+
+ol li {
+  padding-left: 1em;
+}
+
 ul.listing {
   margin-top: 1em; }
 
