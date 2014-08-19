@@ -23,11 +23,6 @@ links:
     url: "mailto:2dxgujun@gmail.com"
     desc: "Mail to Jun Gu"
 
-  - title: "Project"
-    name: "2dxgujun.github.com"
-    url: "http://github.com/2dxgujun/2dxgujun.github.com"
-    desc: "Project@Github"
-
 navigations: 
   - title: Archive
     class: fa fa-list-ul

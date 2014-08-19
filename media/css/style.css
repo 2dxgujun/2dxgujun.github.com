@@ -122,6 +122,7 @@ ul li {
 }
 
 ol li {
+  list-style-type: decimal;
   padding-left: 1em;
 }
 
