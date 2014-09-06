@@ -11,9 +11,7 @@ tags:
 - August
 
 	1. Github博客建成，开始了我的大事记
-	2. 第一次接受采访，虽然是电话采访……现代快报来采访关于青奥小助手的一些问题。[南京日报](http://njrb.njdaily.cn/njrb/html/2014-08/20/content_125057.htm)
-	3. 峰哥给我配了一部Nexus5作为开发机:)开心……n881e提前退休了
 
 - July
 
-	1. 完成人生第一个Android项目，青奥小助手
+	1. 人生第一个Android项目——青奥小助手，[南京日报](http://njrb.njdaily.cn/njrb/html/2014-08/20/content_125057.htm)

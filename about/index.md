@@ -2,10 +2,10 @@
 title: About me
 layout: page
 ---
-![dream](/media/files/2014/08/14/dream.jpg)
+![dream](/media/files/2014/08/14/dream.png)
 The world makes way for the man who knows where he is going.
 
-我是一名普通大学的学生，我从03年12月开始接触Android开发，热爱软件开发与设计。爱开源:) 爱Github:) 爱盗笔:) 讨厌微博:(
+我是一名普通大学的学生，我从03年12月开始接触Android开发，热爱App开发，喜欢看海贼和火影。
 
 如果想了解我更多，请查看[我的大事记](http://2dxgujun.github.io/my-progress)
 
