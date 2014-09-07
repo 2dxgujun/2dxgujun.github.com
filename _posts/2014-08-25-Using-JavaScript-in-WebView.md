@@ -101,6 +101,6 @@ WebView.loadUrl("javascript:show('Android传过来的数据')");
 参考：
 
 1. [Building Web Apps in WebView](https://developer.android.com/guide/webapps/webview.html#UsingJavaScript)
-2. [wangkuifeng0118的Android与JavaScript相互调用 ](http://blog.csdn.net/wangkuifeng0118/article/details/7032247)
+2. [wangkuifeng0118的Android与JavaScript相互调用](http://blog.csdn.net/wangkuifeng0118/article/details/7032247)
 
 本文出自[2dxgujun](http://github.com/2dxgujun)，转载时请注明出处及相应链接。
