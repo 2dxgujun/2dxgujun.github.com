@@ -1,9 +1,9 @@
 ---
-title: 运行时获取控件的尺寸
+title: 正确地获取控件布局尺寸的方法
 layout: post
 guid: 2014090501
 date: 2014-09-05 12:57:00
-description: 介绍几种在运行时获得控件大小的方法
+description: 
 tags:
   - Android
 ---
