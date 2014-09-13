@@ -2,6 +2,7 @@
 title: About me
 layout: page
 ---
+
 ![dream](/media/about_wall.jpg)
 The world makes way for the man who knows where he is going.
 
