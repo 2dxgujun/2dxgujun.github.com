@@ -74,10 +74,12 @@ mGridView.post(new Runnable() {
 #总结
 ---
 如果你需要在自定义控件中获取Drawing Dimensions可以使用以下方法：
+
 - [Override View's layoutChildren Method](#solution_1)
 - [Override View's onSizeChanged Method](#solution_2)
 
-如果控件的外部获取Drawing Dimensions可以使用以下方法：
+如果你想要在控件的外部获取Drawing Dimensions可以使用以下方法：
+
 - [Listen to Draw/Layout Events: ViewTreeObserver](#solution_3)
 - [Add a Runnable to the Layout queue: View.post()](#solution_4)
 
