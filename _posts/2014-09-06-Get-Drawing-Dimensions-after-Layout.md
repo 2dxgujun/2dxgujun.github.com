@@ -19,17 +19,20 @@ tags:
 
 那么什么时候才能获取到控件的尺寸呢？下面我将介绍几种不同的方法来获取控件的尺寸，各有利弊，最佳解决方案请参考[Best Solution](#solution_4)。
 
-#Override View's layoutChildren Method <a id="solution_1"></a>
+<a id="solution_1"></a>
+#Override View's layoutChildren Method
 ---
 [API文档](https://developer.android.com/reference/android/widget/AbsListView.html#layoutChildren())中说明`AbsListView`的子类必须覆盖这个方法来布局子Item，而在布局子Item时，父控件的尺寸一定已经完成计算了，所以可以通过覆盖这个方法来获取父控件的尺寸。
 
 **注意：**这个回调方法会在子Item布局发生改变时多次回调，所以应该避免多次执行相同的代码。因为这个方法只有在`AbsListView`的子类中才存在，所以有局限性。
 
-#Override View's onSizeChanged Method <a id="solution_2"></a>
+<a id="solution_2"></a>
+#Override View's onSizeChanged Method
 ---
 **注意：**这个方法最初几次回调可能会获取到0，需要实现一些判断的逻辑，避免在计算布局尺寸时出现异常，**不推荐使用**。
 
-#Listen to Draw/Layout Events: ViewTreeObserver <a id="solution_3"></a>
+<a id="solution_3"></a>
+#Listen to Draw/Layout Events: ViewTreeObserver
 ---
 `ViewTreeObserver`用来接收全局布局事件，使用`ViewTreeObserver`来获取控件尺寸，可以不用自定义控件。
 **注意：**`ViewTreeObserver`会在各种布局事件触发时调用（例如，当一个控件可见或不可见），所以不要忘记在不需要使用的时候移除这个监听器。
@@ -52,8 +55,8 @@ mGridView.getViewTreeObserver().addOnGlobalLayoutListener(
 		});
 {% endhighlight %}
 
-
-#Add a Runnable to the Layout queue: View.post() <a id="solution_4"></a>
+<a id="solution_4"></a>
+#Add a Runnable to the Layout queue: View.post()
 ---
 这个方法不太为人所知，但我认为这是最好的解决方案。调用控件的`post()`方法，传入自定义的`Runnable`对象，这个`Runnable`对象会控件完成布局之后添加到消息队列中。
 
