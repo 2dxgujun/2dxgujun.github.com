@@ -16,7 +16,7 @@ Layout是Android应用中直接影响用户体验的关键部分；如果实现�
 一个常见的误区是，用最基础的Layout结构可以使布局性能提高。然而，你的程序的每个组件和Layout都需要初始化、布置位置和绘制。例如，嵌套的`LinearLayout`可能会使得`View`的层级结构很深。此外，嵌套使用了`layout_weight`参数的 `LinearLayout`的计算量会尤其大，因为每个子元素都需要被测量两次。这对需要多次重复inflate的Layout尤其需要注意，比如使用`ListView`或`GridView`时。
 
 
-#使用Hierarchy Viewer检查Layout
+#Inspect Your Layout（检查Layout）
 ---
 Android SDK带有一个叫做[Hierarchy Viewer](https://developer.android.com/tools/help/hierarchy-viewer.html)的工具，能够在程序运行时分析Layout。你可以用这个工具找到Layout的性能瓶颈。
 
@@ -105,11 +105,6 @@ Hierarchy Viewer在连接手机时，手机会启动View Server与其进行Socke
 - 没用的子节点：一个没有子节点或者背景的`Layout`应该被去掉，来提高性能。
 - 没用的父节点：一个节点如果只有一个子节点，并且它不是`ScrollView`或根节点，并且它没有背景，这样的节点应该直接被子节点取代。
 - 太深的Layout：Layout的嵌套层数太深对性能有很大影响；尝试使用更扁平的Layout，比如`RelativeLayout`或`GridLayout`来提高性能；一般最多不超过10层。
-
-
-
-
-
 
 
 

@@ -12,7 +12,7 @@ tags:
 
 
 索引：
-> 
+
 - [Editor Actions（快速编辑）](#Editor Actions)
 - [Main menu](#Main menu)
     1. [Find（查找文本）](#Find)
@@ -25,7 +25,7 @@ tags:
     7. [Window](#Window)
         - [Editor Tabs（操作工具窗口）](#Editor Tabs)
 - [Other](#Other)
-> 
+
 <br/>
 
 <a id="Editor Actions"></a>
