@@ -62,7 +62,6 @@ Hierarchy Viewer在连接手机时，手机会启动View Server与其进行Socke
 若返回值是：Result: Parcel(00000000 00000001 '........')，说明View Server处于开启状态。
 
 
-
 如果要在自己的手机上正常地使用Hierarchy Viewer，有两种方法：
 
 1. 直接刷一个开发版本的Android固件
