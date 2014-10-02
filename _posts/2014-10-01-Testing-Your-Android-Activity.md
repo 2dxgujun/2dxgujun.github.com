@@ -1,5 +1,5 @@
 ---
-title: 国庆福利——Activity Testing系列
+title: 【国庆福利】Activity Testing系列
 layout: post
 guid: 2014100106
 date: 2014-10-01 17:02:00
