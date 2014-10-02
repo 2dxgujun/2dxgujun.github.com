@@ -11,7 +11,7 @@ tags:
 目录：
 
 - [使用`<include/>`标签重用Layout](#使用`<include/>`标签重用Layout)
-- [使用`<merge/>`标签优化`<include/>`标签产生的`ViewGroup`冗余](#anchor1)
+- [使用`<merge/>`标签优化使用`<include/>`标签产生的`ViewGroup`冗余](#anchor1)
 - [使用`ViewStub`按需加载`View`](#使用`ViewStub`按需加载`View`)
 - [通过优化，使`ListView`的滑动更加顺畅](#通过优化，使`ListView`的滑动更加顺畅)
 
@@ -108,7 +108,7 @@ container.findViewById(被include的Layout中的id);
 
 <br/>
 <a id="anchor1"></a>
-#使用`<merge/>`标签优化`<include/>`标签产生的`ViewGroup`冗余
+#使用`<merge/>`标签优化使用`<include/>`标签产生的`ViewGroup`冗余
 ---
 `<merge/>`标签在你嵌套Layout时取消了UI层级中冗余的`ViewGroup`。比如，如果你有一个Layout是一个垂直方向的`LinearLayout`，其中包含两个连续的`View`可以在别的`Layout`中重用，那么你会做一个`LinearLayout`来包含这两个`View`，以便重用。不过，当使用另一个`LinearLayout`来嵌套这个可重用的`LinearLayout`时，这种嵌套`LinearLayout`的方式除了减慢你的`UI`性能外没有任何意义。
 

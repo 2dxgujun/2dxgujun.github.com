@@ -57,6 +57,7 @@ tags:
 - Previous/Next Method（在方法间快速移动定位）: `Alt + Up/Down`
 - Previous/Next Highlighted Error（高亮错误快速定位）: `(Shift + )F2`
 - Declartion（跳转到声明）: `Ctrl + B`
+- Test（创建测试用例）：`Ctrl + Shift + T`
 
 <a id="Code"></a>
 #Main menu - Code
@@ -71,6 +72,11 @@ tags:
 #Main menu - Code - Completion
 - SmartType（自动补全代码）[Custom]: `Alt + Shift + /`
 - Basic（代码提示）[Custom]: `Alt + /`
+
+<a id="Folding"></a>
+#Main menu - Code - Folding
+- Expand（展开代码）: `Ctrl + =`
+- Collapse（折叠代码）: `Ctrl + -`
 
 <a id="Analyze"></a>
 #Main menu - Analyze
