@@ -81,7 +81,7 @@ public class MyFirstTestActivityTest
 你可以使用`getActivity()`方法得到测试`Activity`的引用。
 
 
-#添加测试前提（Add Test Preconditions）
+#添加测试前提
 ---
 作为一次完善的检查，确认测试夹具是否设置正确是很好的做法，那样你想要测试的对象就会保证被正确地实例化和初始化。这样，你的测试就不会因为你的测试夹具初始化错误而失败；按照惯例，验证你的测试夹具状态的方法被命名为`testPreconditions()`。
 
@@ -102,7 +102,7 @@ public void testPreconditions() {
 在这两种情况下，测试者将继续运行其它测试用例的测试方法。
 
 
-#添加测试方法验证你的Activity（Add Test Methods to Verify Your Activity）
+#添加测试方法验证你的Activity
 ---
 下一步，添加一个或多个测试方法来验证`Activity`的布局和功能性行为。
 
@@ -129,7 +129,7 @@ public void testMyFirstTestTextView_labelText() {
 
 如果你添加了一个`testPreconditions()`方法，请把你的测试方法放在`testPreconditions()`方法之后。
 
-完整的测试用例代码，请参考示例中的MyFirstTestActivityTest.java。
+完整的测试用例代码，请参考实例工程[AndroidTestingFun.zip](/media/files/2014/10/01/AndroidTestingFun.zip)中的MyFirstTestActivityTest.java。
 
 
 #构建和运行你的测试（Build and Run Your Test）

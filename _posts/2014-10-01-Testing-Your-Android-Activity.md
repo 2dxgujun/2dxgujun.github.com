@@ -10,7 +10,7 @@ tags:
 
 今天是2014国庆节，天气很好，屌丝没有回家，一个人呆在宿舍里面。昨晚和朋友出去喝酒，喝了四瓶，第一次喝到吐了……今天一天都有点萎＞_＜真坑爹啊，头痛写不了代码就写写博客吧……不知道你们的国庆节是怎么过的。
 
-这次的Android Testing系列结合实例完整地介绍了Android测试中的一些知识点，大部分内容是翻译自[Android官网文档](https://developer.android.com/training/activity-testing/index.html)的，水平有限，如有问题欢迎与我交流讨论（我的博客是有评论系统的，不过在主页上不支持评论，打开具体的文章就可以评论了）。
+这次的Android Testing系列结合实例完整地介绍了Android测试中的一些知识点，大部分内容是翻译自[Android官网文档](https://developer.android.com/training/activity-testing/index.html)，水平有限，如有问题欢迎与我交流讨论（我的博客是有评论系统的，不过在主页上不支持评论，打开具体的文章就可以评论了）。
 
 #前言
 ---

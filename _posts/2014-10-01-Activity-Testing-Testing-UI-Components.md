@@ -13,7 +13,7 @@ tags:
 **注意：**
 这一节中介绍的UI测试叫做白盒测试，因为你拥有被测试应用程序的源码。Android [Instrumentation](https://developer.android.com/tools/testing/testing_android.html#Instrumentation)测试框架适用于创建应用程序中UI部件的白盒测试。用户界面测试的另一种类型是黑盒测试，就是那种你无法得到应用程序源码的测试方法。这种类型的测试可以用来测试你的应用程序是如何和其它应用程序或与系统进行交互的。本节不包括黑盒测试，想要了解更多关于如何在你的Android应用程序中进行黑盒测试，请参看[UI Testing guide](https://developer.android.com/tools/testing/testing_ui.html)。
 
-完整代码请参考ClickFunActivityTest.java。
+完整的测试用例代码，请参考实例工程[AndroidTestingFun.zip](/media/files/2014/10/01/AndroidTestingFun.zip)中的ClickFunActivityTest.java。
 
 
 #使用Instrumentation框架创建一个UI测试用例

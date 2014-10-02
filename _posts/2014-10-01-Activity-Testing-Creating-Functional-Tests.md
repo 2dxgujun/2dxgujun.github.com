@@ -13,7 +13,7 @@ tags:
 
 要为你的`Activity`创建功能测试，你的测试类应该扩展自`ActivityInstrumentationTestCase2`。**与`ActivityUnitTestCase`不同的是在`ActivityInstrumentationTestCase2`中可以与Android系统通信以及发送键盘输入和点击事件到UI**。
 
-要了解一个完整的测试例子，看一下示例应用中的SenderActivityTest.java。
+完整的测试用例代码，请参考实例工程[AndroidTestingFun.zip](/media/files/2014/10/01/AndroidTestingFun.zip)中的SenderActivityTest.java。
 
 #添加测试方法验证函数的行为
 ---

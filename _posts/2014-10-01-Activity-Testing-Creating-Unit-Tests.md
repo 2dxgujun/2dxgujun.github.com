@@ -14,7 +14,7 @@ tags:
 
 这节内容将会教你编写一个单元测试来验证一个`Intent`是否正确触发了另一个`Activity`。由于测试运行在一个独立的环境中，所以`Intent`没有被发送到`Android`系统中（不会真正启动Activity），但你还是可以验证`Intent`对象中携带有效数据的正确性。
 
-可以参考一下示例代码中的LaunchActivityTest.java。
+完整的测试用例代码，请参考实例工程[AndroidTestingFun.zip](/media/files/2014/10/01/AndroidTestingFun.zip)中的LaunchActivityTest.java。
 
 **注意：**
 要针对系统或外部依赖进行测试，你可以使用来自Mocking框架的Mock类，并把它们注入到你的单元测试中。要了解更多关于Android提供的Mocking框架，请参看[Mock Object Classes](https://developer.android.com/tools/testing/testing_android.html#MockObjectClasses})。
