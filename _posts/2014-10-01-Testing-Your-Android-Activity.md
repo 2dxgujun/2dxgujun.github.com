@@ -26,16 +26,16 @@ tags:
 如何在Android Studio中创建测试环境。
 
 **[创建和运行一个测试用例](http://2dxgujun.github.io/10-01-2014/Activity-Testing-Creating-and-Running-a-Test-Case.html)：**
-如何编写测试用例来验证Activity中的一些属性，并且使用Android框架提供的Instrumentation测试者来运行测试。
+如何编写测试用例来验证`Activity`中的一些属性，并且使用Android框架提供的`Instrumentation`测试者来运行测试。
 
 **[测试UI组件](http://2dxgujun.github.io/10-01-2014/Activity-Testing-Testing-UI-Components.html)：**
-如何测试Activity中指定UI组件的行为。
+如何测试`Activity`中指定UI组件的行为。
 
 **[创建单元测试](http://2dxgujun.github.io/10-01-2014/Activity-Testing-Creating-Unit-Tests.html)：**
-如何用单元测试来独立地验证一个Activity的行为。
+如何用单元测试来独立地验证一个`Activity`的行为。
 
 **[创建功能测试](http://2dxgujun.github.io/10-01-2014/Activity-Testing-Creating-Functional-Tests.html)：**
-如何用功能测试来验证多个Activity之间的交互作用。
+如何用功能测试来验证多个`Activity`之间的交互作用。
 
 
 <br/>
