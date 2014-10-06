@@ -22,7 +22,9 @@ tags:
         - [Completion（自动补全）](#Completion)
     5. [Analyze（工程扫描、错误检查）](#Analyze)
     6. [Refactor（重构）](#Refactor)
-    7. [Window](#Window)
+    7. [Run](#Run)
+    8. [VCS（版本控制）](#VCS)
+    9. [Window](#Window)
         - [Editor Tabs（操作工具窗口）](#Editor Tabs)
 - [Other](#Other)
 
@@ -46,6 +48,7 @@ tags:
 - Recent Changes（对比最近修改的代码）: `Alt + Shift + C`
 - Paramter Info（方法参数提示）: `Ctrl + P`
 - Quick Documentation（显示注释文档）: `Ctrl + Q`
+- Recent Changes（查看最近的修改）: `Alt + Shift + C`
 
 <a id="Navigate"></a>
 #Main menu - Navigate
@@ -85,6 +88,15 @@ tags:
 <a id="Refactor"></a>
 #Main menu - Refactor
 - Rename...（重命名）: `Shift + F6`
+
+<a id="Run"></a>
+#Main menu - Run
+- Run（运行）: `Shift + F10`
+- Run...（选择运行）: `Alt + Shift + F10`
+
+<a id="VCS"></a>
+#Main menu - VCS
+- VCS Operations Popup...（VCS操作弹窗）: `Alt + 后引号`
 
 <a id="Window"></a>
 <a id="Editor Tabs"></a>
