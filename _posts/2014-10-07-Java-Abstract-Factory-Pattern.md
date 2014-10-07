@@ -1,5 +1,5 @@
 ---
-title: Java抽象工厂模式（Abstract Factory Pattern）——创建位于多个产品等级结构的产品对象
+title: Java抽象工厂模式（Abstract Factory Pattern）——最具一般性的工厂模式
 layout: post
 guid: 2014100701
 date: 2014-10-07 11:10:00
