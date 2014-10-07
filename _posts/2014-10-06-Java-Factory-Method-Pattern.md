@@ -156,7 +156,7 @@ public class LoggerFactory {
 
 Sunny公司开发人员决定使用工厂方法模式来设计日志记录器，其基本结构如图3所示：
 ![logger](/media/files/pattern/factory method/logger.png)
-<div align="center">图3 日志记录器结构图</div>
+<div align="center">图3 基于工厂方法模式设计的日志记录器结构图</div>
 
 在图3中，`Logger`接口充当抽象产品，其子类`FileLogger`和`DatabaseLogger`充当具体产品，`LoggerFactory`接口充当抽象工厂，其子类`FileLoggerFactory`和`DatabaseLoggerFactory`充当具体工厂。
 
