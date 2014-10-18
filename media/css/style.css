@@ -57,11 +57,11 @@ hr {
 
 a, header #header h1 a, article .title a, article .meta .tags a, article .divider a{
   text-decoration: none;
-  color: #BB2222;
+  color: #ED1941;
 }
 
 a:hover, header #header h1 a:hover, article .title a:hover, article .meta .tags a:hover, article .divider a:hover {
-    color: #DD1144;
+    color: #339966;
 }
 
 blockquote, pre code {
@@ -203,6 +203,8 @@ article {
     max-width: 680px;
     display: block;
     margin: .5em auto; }
+/*
+超链接右上角小标记
 a[href^="http://"]{
     background:url(/media/blank.gif) top right no-repeat;
     padding-right:10px;
@@ -211,6 +213,7 @@ a[href^="https://"]{
     background:url(/media/blank.gif) top right no-repeat;
     padding-right:10px;
   }
+*/
   article .comment {
     margin: 3em 0; }
   article .divider {
