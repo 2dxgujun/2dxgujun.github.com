@@ -27,8 +27,8 @@
 			controlHTML : '<a href="javascript:;"><b>回到顶部↑</b></a>',		//html代码
 			className: '',					//样式名称
 			titleName: '回到顶部',				//回到顶部的title属性
-			offsetx : 5,					//回到顶部 right 偏移位置
-			offsety : 5,					//回到顶部 bottom 偏移位置
+			offsetx : 0,					//回到顶部 right 偏移位置
+			offsety : 0,					//回到顶部 bottom 偏移位置
 			anchorkeyword : '#top', 		//猫点链接
 		}, options);
 		
