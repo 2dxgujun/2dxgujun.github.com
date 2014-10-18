@@ -29,6 +29,7 @@
     <![endif]-->
 
     <script src="/media/js/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/media/js/jquery.scrolltotop.js" type="text/javascript" charset="utf-8"></script>
   </head>
 
   <body>
@@ -52,10 +53,16 @@
         <footer>
           <div>
             {% assign first_post = site.posts | last %}
-            &copy; {{ first_post.date | date: "%Y" }} ~ {{ site.time | date: "%Y" }} {{ site.author }} | Powered By <a href="http://jekyllrb.com/" title="Jekyll">Jekyll</a> & <a href="http://pages.github.com/" title="Github pages">Github</a> | Fork <a href="http://github.com/2dxgujun/2dxgujun.github.com" title="Fork me">me</a> | {%include fc_pageview.md %}
+            &copy; {{ first_post.date | date: "%Y" }} ~ {{ site.time | date: "%Y" }} {{ site.author }} | Powered By <a href="http://jekyllrb.com/" title="Jekyll">Jekyll</a> & <a href="https://pages.github.com/" title="Github pages">Github</a> | Theme By <a href="https://github.com/MicroSimple/microsimple.github.com" title="Theme By">MicroSimple</a> | Fork <a href="https://github.com/2dxgujun/2dxgujun.github.com" title="Fork me">me</a> | {%include fc_pageview.md %}
           </div>
         </footer>
 
       </div>
   </body>
+  <script type="text/javascript">
+	jQuery(function($){
+		//回到顶部
+		$.scrolltotop({className: 'totop'});
+	});
+</script>
 </html>
