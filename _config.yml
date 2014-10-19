@@ -1,56 +1,23 @@
-﻿markdown: rdiscount
-pygments: true
-safe: true
-auto: true
-permalink: /:categories/:month-:day-:year/:title.html
-name: "Jun Gu's Blog"
-markdown: rdiscount
+﻿markdown: kramdown
+highlighter: pygments
+permalink: blog/:year/:month/:day/:title.html
+paginate: 6
+paginate_path: page/:num
 
-author: "Jun Gu"
-description: "记录生活中的点点滴滴,铭刻生命中的些许感动"
-keywords: "一点经验,一些体验,收获心得,无言感动"
-disqus: "2dxgujun"
-mail: "2dxgujun@gmail.com"
-
-links: 
-  - title: "Github"
-    name: "2dxgujun"
-    url: "http://github.com/2dxgujun"
-    desc: "My GitHub"
-
-  - title: "Mail"
-    name: "2dxgujun@gmail.com"
-    url: "mailto:2dxgujun@gmail.com"
-    desc: "Mail to Jun Gu"
-
-  - title: "微博"
-    name: "码农小骏骏"
-    url: "http://weibo.com/2dxgujun"
-    desc: "新浪微博"
-
-  - title: "AboutMe"
-    name: "JunGu"
-    url: "http://about.me/jungu"
-    desc: "About Me"
-
-navigations: 
-  - title: Archive
-    class: fa fa-list-ul
-    href: /archive
-
-  - title: Tags
-    class: fa fa-tags
-    href: /tags
-
-  - title: About
-    class: fa fa-user
-    href: /about
-
-  - title: Links
-    class: fa fa-link
-    href: /links
-
-  - title: Subscribe
-    class: fa fa-rss
-    href: /atom.xml
-
+blog:
+    name:                                                # 博客名称
+    description:                                         # 博客描述
+    title:                                               # 网页标题
+    url:                                                 # 博客地址
+    duoshuo:                                             # 多说ID
+    tongji:                                              # 百度统计ID
+    qiniu:                                               # 七牛云地址
+author:
+    name:                                                # 作者名称
+    email:                                               # 邮箱地址
+    weibo:                                               # 微博地址
+    github:                                              # GitHub地址
+    logo:                                                # logo地址
+    douban:
+        name:                                            # 豆瓣地址名称
+        key:                                             # 豆瓣API Key

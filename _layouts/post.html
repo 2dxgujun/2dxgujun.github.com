@@ -1,80 +1,32 @@
 ---
-layout: default
+layout: blog
+post: true
 ---
 
-<article class="content">
-  <section class="title">
-    <h2>{{ page.title }} </h2>
-  </section>
-
-  <section class="meta">
-    <span class="time">
-      <time datetime="{{ page.date | date:"%Y-%m-%d %H:%M:%S" }}">{{ page.date | date:"%Y-%m-%d %H:%M:%S" }}</time>
-    </span>
-
-    {% if page.tags %}
-    <span class="tags">
-      {% for tag in page.tags %}
-      <a href="/tags/#{{ tag }}" title="{{ tag }}">#{{ tag }}</a>
-      {% endfor %}
-    </span>
-    {% endif %}
-  </section>
-
-  <section class="post">
-  {{ content }}
-  </section>
-
-  {% if page.guid %}
-  <script type="text/javascript">
-      var disqus_shortname = '{{ site.disqus }}';
-      var disqus_identifier = '{{ page.guid }}';
-
-      function leave_comment() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-          $("#leave_comment_link").css("display", "none");
-          $("#collapse_comment_link").css("display", "");
-      };
-      function collapse_comment() {
-          // document.getElementById("disqus_thread").innerHTML = '';
-          $("#disqus_thread").slideUp(400, function() {
-              $("#disqus_thread").empty();
-              $("#leave_comment_link").css("display", "");
-              $("#collapse_comment_link").css("display", "none");
-              $("#disqus_thread").css("display", "");
-          });
-      };
-  </script>
-
-  <div class="divider">
-    <span>
-    {% if page.previous %}
-    <a title="{{ page.previous.title }}" href="{{ page.previous.url }}"><i class="fa fa-chevron-left"></i></a>
-    {% else %}
-    <i class="fa fa-circle"></i>
-    {% endif %}
-    </span>
-
-    <span><a title="Leave comment" href="javascript:leave_comment();" id="leave_comment_link"><i class="fa fa-comment-o"></i></a></span>
-
-    <span><a title="Collapse comment" href="javascript:collapse_comment();" id="collapse_comment_link" style="display:none;"><i class="fa fa-chevron-up"></i></a></span>
-
-    <span>
-    {% if page.next %}
-    <a title="{{ page.next.title }}" href="{{ page.next.url }}"><i class="fa fa-chevron-right"></i></a>
-    {% else %}
-    <i class="fa fa-circle"></i>
-    {% endif %}
-    </span>
-  </div>
-
-  <section class="comment">
-  <div id="disqus_thread"></div>
-  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </section>
-  {% endif %}
-</article>
-
-{% include bd_share.md %}
+<header class="post-header">
+  <h1 class="post-title"><a href="{{ page.url }}">{{ page.title }}</a></h2>
+  <p class="post-meta">
+    <i class="fa fa-calendar"></i>
+    {{ page.date | date: "%Y" }}年{{ page.date | date: "%m" }}月{{ page.date | date: "%d" }}日
+    <i class="space"></i>
+    <i class="fa fa-tags"></i>
+    <a class="post-category" href="/page/category.html#{{ page.categories }}">{{ page.categories }}</a>	
+  </p>
+</header>
+<div class="post-main">
+{{ content }}
+</div>
+{% include share.html %}
+<div class="pagination">
+{% if page.previous %}
+<a class="pagination-item newer" href="{{ BASE_PATH }}{{ page.previous.url }}"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;{{ page.previous.title }}</a>
+{% else %}
+<span class="pagination-item newer">上一篇&nbsp;<i class="fa fa-chain-broken"></i></span>
+{% endif %}
+{% if page.next %}
+<a class="pagination-item older" href="{{ BASE_PATH }}{{ page.next.url }}">{{ page.next.title }}&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></a>
+{% else %}
+<span class="pagination-item older">下一篇&nbsp;<i class="fa fa-chain-broken"></i></span>
+{% endif %}
+</div>
+{% if page.duoshuo != false %}{% include duoshuo.html %}{% endif %}

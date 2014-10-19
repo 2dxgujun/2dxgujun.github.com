@@ -1,0 +1,3 @@
+User-Agent: *
+
+Sitemap: http://2dxgujun.com/sitemap.txt
