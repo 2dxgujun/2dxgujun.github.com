@@ -9,7 +9,7 @@ blog:
     description:                                         Android developer, student
     title:                                               JunGu Blog
     url:                                                 http://2dxgujun.com/
-    duoshuo:                                             # 多说ID
+    duoshuo:                                             2dxgujun
     tongji:                                              # 百度统计ID
     qiniu:                                               # 七牛云地址
 author:

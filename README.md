@@ -2,7 +2,7 @@
 
 Personal blog powered by [Jekyll](http://jekyllrb.com/) & [Github pages](http://pages.github.com/).
 
-Focked from [MicroSimple](https://github.com/MicroSimple/microsimple.github.com).
+Fork from [Jekyll-Light](https://github.com/pexcn/Jekyll-Light)
 
 Feel free to fork, just please keep the link:)
 
