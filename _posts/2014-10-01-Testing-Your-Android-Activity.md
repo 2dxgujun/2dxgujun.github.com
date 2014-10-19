@@ -1,11 +1,8 @@
 ---
-title: 【国庆福利】Activity Testing系列
 layout: post
-guid: 2014100106
-date: 2014-10-01 17:02:00
-description: 
-tags:
-  - Android
+title: 【国庆福利】Activity Testing系列
+category: Android Dev
+date: 2014-10-01
 ---
 
 今天是2014国庆节，天气很好，屌丝没有回家，一个人呆在宿舍里面。昨晚和朋友出去喝酒，喝了四瓶，第一次喝到吐了……今天一天都有点萎＞_＜真坑爹啊，头痛写不了代码就写写博客吧……不知道你们的国庆节是怎么过的。

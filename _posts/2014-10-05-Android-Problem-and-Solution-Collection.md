@@ -1,12 +1,10 @@
 ---
-title: 我在Android开发中遇到的问题和解决方案
 layout: post
-guid: 2014100501
-date: 2014-10-05 14:06:00
-description: 
-tags:
-  - Android
+title: 我在Android开发中遇到的问题和解决方案
+category: Android Dev
+date: 2014-10-05
 ---
+
 
 在开发中遇到问题的时候，我一直有一种我之前好像遇到过的感觉，但是怎么解决的我已经忘了……（PS.我在写这篇文章前刚遇到过这种情况）
 
@@ -29,7 +27,7 @@ tags:
 <br/>
 ###ListView中Item失去焦点，无法点击
 ---
-在Item的Layout中如果放置了像Button，EditText之类的控件，这些子控件会把Item的焦点给抢掉。
+在Item的Layout中如果放置了像`Button`，`EditText`之类的控件，这些子控件会把Item的焦点给抢掉。
 
 参考：
 [关于ListView的Item失去焦点不能点击](http://blog.csdn.net/beijingshi1/article/details/10431589)

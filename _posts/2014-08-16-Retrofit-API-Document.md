@@ -1,11 +1,8 @@
 ---
-title: Retrofit - REST client for Android/Java
 layout: post
-guid: 2014081601
-date: 2014-08-16 16:50:13
-description: Retrofit简介和使用介绍
-tags:
-  - Android
+title: Retrofit中文翻译文档
+category: Android Dev
+date: 2014-08-16
 ---
 
 今天在看[Android学习之路](http://stormzhang.github.io/android/2014/07/07/learn-android-from-rookie/)的时候，看到[retrofit](http://github.com/square/retrofit)这个开源库。虽然我浏览过该项目的主页，大概了解这是一个网络请求库，但是因为我在Android上一直都是用的Apache的HttpClient和一个基于回调的异步Http请求库[android-async-http](http://github.com/loopj/android-async-http)，特别是后者，简单方便，我一度感觉在网络请求库上别无他求了。

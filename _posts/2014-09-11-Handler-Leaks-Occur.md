@@ -1,11 +1,8 @@
 ---
-title: Handler是如何造成内存泄漏的及其解决方法
 layout: post
-guid: 2014091101
-date: 2014-09-11 12:36:00
-description: 
-tags:
-  - Android
+title: Handler是如何造成内存泄漏的及其解决方法
+category: Android Dev
+date: 2014-09-11
 ---
 
 每当我在一个`Activity`中定义非静态内部`Handler`类的时候，ADT就会发出一个内存泄漏的警告，虽然我知道如何Fix这个问题，但是对产生这个问题原因没什么概念，今天准备作死一回，查了些资料，写下这篇博客巩固知识，启示后人。

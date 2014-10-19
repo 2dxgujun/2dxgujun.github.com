@@ -1,12 +1,10 @@
 ---
-title: Measured Dimensions和Drawing Dimensions的不同
 layout: post
-guid: 2014090801
-date: 2014-09-08 22:36:00
-description: 
-tags:
-  - Android
+title: Measured Dimensions和Drawing Dimensions的不同
+category: Android Dev
+date: 2014-09-08
 ---
+
 
 [Android Documentation](http://developer.android.com/reference/android/view/View.html#SizePaddingMargins)中说明一个View有两种尺寸：Measured Dimensions和Drawing Dimensions。
 

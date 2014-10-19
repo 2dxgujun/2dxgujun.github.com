@@ -1,12 +1,10 @@
 ---
-title: Hello Gitblog
 layout: post
-guid: 2014081301
-date: 2014-08-13 21:31:07
-description: 博客建成了
-tags: 
-  - Mood
+title: Hello Gitblog
+category: Diary
+date: 2014-08-13
 ---
+
 
 ![Jekyll](/media/files/2014/08/14/jekyll.png)
 今天2014年8月13日，我的Github博客搭建完成了，纪念一下。

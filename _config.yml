@@ -1,4 +1,4 @@
-﻿markdown: kramdown
+﻿markdown: rdiscount
 highlighter: pygments
 permalink: blog/:year/:month/:day/:title.html
 paginate: 6
@@ -6,7 +6,7 @@ paginate_path: page/:num
 
 blog:
     name:                                                JunGu
-    description:                                         Android developer
+    description:                                         Android developer, student
     title:                                               JunGu Blog
     url:                                                 http://2dxgujun.com/
     duoshuo:                                             # 多说ID

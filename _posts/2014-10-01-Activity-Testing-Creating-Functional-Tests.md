@@ -1,11 +1,8 @@
 ---
-title: Activity Testing——创建功能测试
 layout: post
-guid: 2014100105
-date: 2014-10-01 15:13:00
-description: 
-tags:
-  - Android
+title: Activity Testing——创建功能测试
+category: Android Dev
+date: 2014-10-01
 ---
 
 

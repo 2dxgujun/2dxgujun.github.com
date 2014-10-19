@@ -1,12 +1,10 @@
 ---
-title: Activity Testing——建立测试环境
 layout: post
-guid: 2014100101
-date: 2014-10-01 15:10:00
-description: 学习如何使用Android Studio进行测试。
-tags:
-  - Android
+title: Activity Testing——建立测试环境
+category: Android Dev
+date: 2014-10-01
 ---
+
 
 在开始编写、运行你的测试之前，你应该先建立你的测试环境；本节将会教你如何在Android Studio上进行测试。
 

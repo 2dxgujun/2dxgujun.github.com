@@ -1,12 +1,9 @@
 ---
-title: Android布局的优化——改良设计和代码
 layout: post
-guid: 2014092702
-date: 2014-09-27 16:48:00
-description: 
-tags:
-  - Android
+title: Android布局的优化——改良设计和代码
+category: Android Dev
 ---
+
 
 目录：
 

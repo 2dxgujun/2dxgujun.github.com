@@ -1,13 +1,9 @@
 ---
-title: 正确地获取控件布局尺寸的方法
 layout: post
-guid: 2014090501
-date: 2014-09-05 12:57:00
-description: 
-tags:
-  - Android
+title: Android正确地获取控件布局尺寸的方法
+category: Android Dev
+date: 2014-09-06
 ---
-
 
 今天在项目中遇到一个问题，需要使用`GridView`来显示一组图片，图片要求长宽相等，而且图片之间有一定的间距，类似于QQ里面在写动态时添加图片的网格；需要适配不同分辨率的屏幕，每行固定显示4个Item。
 

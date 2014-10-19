@@ -1,11 +1,8 @@
 ---
-title: Activity Testing——创建单元测试
 layout: post
-guid: 2014100104
-date: 2014-10-01 15:12:00
-description: 
-tags:
-  - Android
+title: Activity Testing——创建单元测试
+category: Android Dev
+date: 2014-10-01
 ---
 
 对`Activity`进行单元测试可以快速验证一个`Activity`的状态以及它和与其它独立组件间的交互方式。一个单元测试通常只测试应用代码中尽可能小的代码块（可以是一个方法，类，或者组件），而且不应该依赖于系统或网络资源。比如说，你可以写一个单元测试去检查一个`Activity`是否有正确的布局或者触发它的`Intent`对象是否正确。

@@ -1,12 +1,10 @@
 ---
-title: Activity Testing——创建和执行测试用例
 layout: post
-guid: 2014100102
-date: 2014-10-01 15:11:00
-description: 
-tags:
-  - Android
+title: Activity Testing——创建和执行测试用例
+category: Android Dev
+date: 2014-10-01
 ---
+
 
 为了验证布局设计和功能性行为是否符合预期，为应用中的每一个`Activity`创建测试是很有意义的。对于每一个测试，你需要在测试用例中创建一个个独立的单元，包括测试夹具、测试前提和测试`Activity`的方法。然后你就可以运行测试并得到测试报告；如果任何测试方法失败，这表明在你的代码中有潜在的缺陷。
 

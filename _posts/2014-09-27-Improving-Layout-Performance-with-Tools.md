@@ -1,12 +1,10 @@
 ---
-title: Android布局的优化——使用优化工具
 layout: post
-guid: 2014092701
-date: 2014-09-27 15:15:00
-description: 
-tags:
-  - Android
+title: Android布局的优化——使用优化工具
+category: Android Dev
+date: 2014-09-27
 ---
+
 
 Layout是Android应用中直接影响用户体验的关键部分；如果实现的不好，可能会导致你的应用消耗大量内存，同时应用会非出现卡顿。Android SDK工具集里面提供了可以帮助你定位Layout性能缺陷的工具，通过这些工具可以让你用最小的内存消耗实现流畅的UI。
 

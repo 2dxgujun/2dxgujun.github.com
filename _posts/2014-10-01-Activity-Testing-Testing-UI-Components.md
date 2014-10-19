@@ -1,11 +1,8 @@
 ---
-title: Activity Testing——测试UI组件
 layout: post
-guid: 2014100103
-date: 2014-10-01 15:12:00
-description: 
-tags:
-  - Android
+title: Activity Testing——测试UI组件
+category: Android Dev
+date: 2014-10-01
 ---
 
 通常情况下，你的`Activity`中包含很多用户界面组件（如`Button`、`CheckBox`、`EditText`等等）允许你的用户和Android应用程序进行交互。本节将介绍如何测试一个简单的按钮交互界面。你可以使用相同的步骤来测试其它的，更复杂的UI组件。

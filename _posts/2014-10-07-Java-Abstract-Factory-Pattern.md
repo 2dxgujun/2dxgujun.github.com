@@ -1,12 +1,10 @@
 ---
-title: Java抽象工厂模式（Abstract Factory Pattern）——最具一般性的工厂模式
 layout: post
-guid: 2014100701
-date: 2014-10-07 11:10:00
-description: 
-tags:
-  - Pattern
+title: Java抽象工厂模式（Abstract Factory Pattern）——最具一般性的工厂模式
+category: Design Pattern
+date: 2014-10-07
 ---
+
 
 <a id="定义"></a>
 #定义

@@ -1,12 +1,10 @@
 ---
-title: Android和JavaScript相互调用
 layout: post
-guid: 2014082501
-date: 2014-08-25 14:09:00
-description: JavaScript和Android互相调用的教程
-tags:
-  - Android
+title: Android和JavaScript互相调用
+category: Android Dev
+date: 2014-08-25
 ---
+
 
 最近在做一个App中需要通过`WebView`加载一个使用JavaScript的网页，并且要实现相互之间的调用。
 
