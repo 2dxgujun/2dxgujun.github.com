@@ -5,19 +5,19 @@ paginate: 6
 paginate_path: page/:num
 
 blog:
-    name:                                                # 博客名称
-    description:                                         # 博客描述
-    title:                                               # 网页标题
-    url:                                                 # 博客地址
+    name:                                                JunGu
+    description:                                         Android developer
+    title:                                               JunGu Blog
+    url:                                                 http://2dxgujun.com/
     duoshuo:                                             # 多说ID
     tongji:                                              # 百度统计ID
     qiniu:                                               # 七牛云地址
 author:
-    name:                                                # 作者名称
-    email:                                               # 邮箱地址
-    weibo:                                               # 微博地址
-    github:                                              # GitHub地址
-    logo:                                                # logo地址
+    name:                                                JunGu
+    email:                                               2dxgujun@gmail.com
+    weibo:                                               http://weibo.com/2dxgujun
+    github:                                              https://github.com/2dxgujun
+    logo:                                                /media/avatar.png
     douban:
-        name:                                            # 豆瓣地址名称
-        key:                                             # 豆瓣API Key
+        name:                                            db2dxgujun
+        key:                                             0f93d5c81935559d2ebb81584ba000d7
