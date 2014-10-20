@@ -10,11 +10,11 @@
   icon:  fa fa-book
   title: Read
 
-- href: /life/index.html
-  icon: fa fa-eyedropper
-  title: Record
-  newblank: true
+- href: /page/link.html
+  icon: fa fa-link
+  title: Link
 
 - href: /page/about.html
   icon: fa fa-paper-plane-o
   title: About
+# newblank: true 是否开启一个新的页面
