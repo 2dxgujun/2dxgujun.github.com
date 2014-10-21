@@ -5,12 +5,13 @@ category: Android Dev
 date: 2014-10-01
 ---
 
-
 功能测试包括验证独立的应用组件是否像用户期望的那样协同工作。比如，你可以创建一个功能测试验证在用户执行UI交互时`Activity`是否正确启动了目标`Activity`。
 
 要为你的`Activity`创建功能测试，你的测试类应该扩展自`ActivityInstrumentationTestCase2`。**与`ActivityUnitTestCase`不同的是，在`ActivityInstrumentationTestCase2`中可以与Android系统通信以及发送键盘输入和点击事件到UI**。
 
 完整的测试用例代码，请参考实例工程[AndroidTestingFun](/media/files/2014/10/01/AndroidTestingFun.zip)中的SenderActivityTest.java。
+
+<!-- more -->
 
 #添加测试方法验证函数的行为
 ---
@@ -85,7 +86,6 @@ assertEquals("Activity is of wrong type",
 getInstrumentation().removeMonitor(receiverActivityMonitor);
 {% endhighlight %}
 
-<br/>
 #使用Instrumentation发送一个键盘输入
 ---
 如果你的`Activity`有一个`EditText`，你想要测试用户是否可以给`EditText`对象输入内容。
@@ -110,15 +110,6 @@ getInstrumentation().waitForIdleSync();
 getInstrumentation().sendStringSync("Hello Android!");
 getInstrumentation().waitForIdleSync();
 {% endhighlight %}
-
-
-
-浏览本系列的其它文章：
-
-1. [建立测试环境](http://2dxgujun.github.io/10-01-2014/Activity-Testing-Setting-Up-Your-Test-Environment.html)
-2. [创建和运行一个测试用例](http://2dxgujun.github.io/10-01-2014/Activity-Testing-Creating-and-Running-a-Test-Case.html)
-3. [测试UI组件](http://2dxgujun.github.io/10-01-2014/Activity-Testing-Testing-UI-Components.html)
-4. [创建单元测试](http://2dxgujun.github.io/10-01-2014/Activity-Testing-Creating-Unit-Tests.html)
 
 <br/>
 参考：

@@ -4,16 +4,6 @@ title: Android布局的优化——改良设计和代码
 category: Android Dev
 ---
 
-
-目录：
-
-- [使用`<include/>`标签重用Layout](#使用`<include/>`标签重用Layout)
-- [使用`<merge/>`标签优化使用`<include/>`标签产生的`ViewGroup`冗余](#anchor1)
-- [使用`ViewStub`按需加载`View`](#使用`ViewStub`按需加载`View`)
-- [通过优化，使`ListView`的滑动更加顺畅](#通过优化，使`ListView`的滑动更加顺畅)
-
-
-<br/>
 今天被个推SDK的给坑的，哎，个推把推送后发送`Notification`的方法给封装起来了，且在外部没有给第三方留下任何处理推送内容的接口；只给我留了一个`notification.xml`布局文件作为通知的布局，默认的UI效果看了简直就想吐……无奈，只好翻看Android源码找到原生`Notification`的布局文件，拿来凑活着用：布局文件名是`notification_template_base.xml`，
 
 在这个原生的布局中遇到了一个`ViewStub`，看着好像挺有用的样子……嗯
@@ -30,8 +20,8 @@ category: Android Dev
 
 今天时间不是太紧，最近的项目也是在做布局工作，所以就查了点资料写了这篇学习性质的博文。
 
-<br/>
-<a id="使用`<include/>`标签重用Layout"></a>
+<!-- more -->
+
 #使用`<include/>`标签重用Layout
 ---
 Android提供了很多小的可重用的组件，但是你可能需要重用一些Layout，Android提供了`<include/>`标签可以把其他Layout嵌入到当前Layout。
@@ -103,8 +93,6 @@ View container = findViewById(<include/>中的id);
 container.findViewById(被include的Layout中的id);
 {% endhighlight %}
 
-<br/>
-<a id="anchor1"></a>
 #使用`<merge/>`标签优化使用`<include/>`标签产生的`ViewGroup`冗余
 ---
 `<merge/>`标签在你嵌套Layout时取消了UI层级中冗余的`ViewGroup`。比如，如果你有一个Layout是一个垂直方向的`LinearLayout`，其中包含两个连续的`View`可以在别的`Layout`中重用，那么你会做一个`LinearLayout`来包含这两个`View`，以便重用。不过，当使用另一个`LinearLayout`来嵌套这个可重用的`LinearLayout`时，这种嵌套`LinearLayout`的方式除了减慢你的`UI`性能外没有任何意义。
@@ -127,8 +115,6 @@ container.findViewById(被include的Layout中的id);
 
 现在，当你要将这个Layout包含到另一个Layout中时（并且使用了`<include/>`标签），系统会直接把两个`Button`放到Layout中，而不会有多余的`ViewGroup`被嵌套。
 
-<br/>
-<a id="使用`ViewStub`按需加载`View`"></a>
 #使用`ViewStub`按需加载`View`
 ---
 除了简单的把一个Layout包含到另一个中，你可能还想在程序开始后，仅当你的Layout对用户可见时才开始载入一些视图。各种不常用的布局像进度条、显示错误消息等可以使用`<ViewStub/>`标签，以减少内存使用量，加快渲染速度。本节告诉你如何分步载入Layout来提高布局性能。
@@ -178,8 +164,6 @@ View view1 = stub.inflate();
 
 在运行时动态地设置`ViewStub`的资源文件和`inflateId`，然后调用`inflate()`方法生成`View`。
 
-<br/>
-<a id="通过优化，使`ListView`的滑动更加顺畅"></a>
 #通过优化，使`ListView`的滑动更加顺畅
 ---
 如果你有一个包含复杂或者每个项（Item）包含很多数据的`ListView`，那么上下滚动的性能可能会降低。本节给你一些关于如何把滚动变得更流畅的提示。
@@ -244,8 +228,6 @@ convertView.setTag(holder);
 {% endhighlight %}
 
 这样你就可以轻松获取每个视图，而不是用`findViewById()`来不断查找视图，节省了宝贵的运算时间。
-
-
 
 
 <br/>

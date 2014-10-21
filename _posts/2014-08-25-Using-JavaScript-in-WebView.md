@@ -5,7 +5,6 @@ category: Android Dev
 date: 2014-08-25
 ---
 
-
 最近在做一个App中需要通过`WebView`加载一个使用JavaScript的网页，并且要实现相互之间的调用。
 
 首先如果如果你的`WebView`要加载使用JavaScript的网页，必须启用`WebView`对JavaScript的支持，一旦启用之后你就可以通过接口来实现本地代码和JavaScript代码的互相调用。
@@ -21,6 +20,8 @@ WebView myWebView = (WebView) findViewById(R.id.webview);
 WebSettings webSettings = myWebView.getSettings();
 webSettings.setJavaScriptEnabled(true);
 {% endhighlight %}
+
+<!-- more -->
 
 #JavaScript调用Android代码
 ---

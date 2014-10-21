@@ -5,13 +5,12 @@ category: Android Dev
 date: 2014-10-01
 ---
 
-
 为了验证布局设计和功能性行为是否符合预期，为应用中的每一个`Activity`创建测试是很有意义的。对于每一个测试，你需要在测试用例中创建一个个独立的单元，包括测试夹具、测试前提和测试`Activity`的方法。然后你就可以运行测试并得到测试报告；如果任何测试方法失败，这表明在你的代码中有潜在的缺陷。
-
 
 **注意：**
 在测试驱动开发（TDD）方法中，你应该编写足够的有效测试代码，不断更新你的测试用例，而不是在你写了大部分或全部前期代码后再开始测试。
 
+<!-- more -->
 
 #创建一个测试用例
 ---
@@ -30,8 +29,7 @@ OK之后，出现一个对话框叫你选择测试用例目录：
 
 OK，这样就在对应的测试用例目录中新建了一个测试用例`MyActivityTest`。
 
-
-###设置测试夹具
+##设置测试夹具
 测试夹具由一系列必须在运行一个或多个测试方法前被初始化的对象组成。要建立测试夹具，你可以在你的测试用例中重写`setUp()`和`tearDown()`方法；测试者会在运行任何其它测试方法之前自动运行`setUp()`方法并且在所有测试方法运行结束后运行`tearDown()`方法，你可以用这些方法来分离测试代码的初始化和清理工作。
 
 下面通过一个实例介绍如何设置测试夹具：
@@ -77,8 +75,7 @@ public class MyFirstTestActivityTest
 
 你可以使用`getActivity()`方法得到测试`Activity`的引用。
 
-
-###添加测试前提
+##添加测试前提
 作为一次完善的检查，确认测试夹具是否设置正确是很好的做法，那样你想要测试的对象就会保证被正确地实例化和初始化。这样，你的测试就不会因为你的测试夹具初始化错误而失败；按照惯例，验证你的测试夹具状态的方法被命名为`testPreconditions()`。
 
 例如，你可能需要添加一个像这样的`testPreconditions()`方法：
@@ -97,8 +94,7 @@ public void testPreconditions() {
 
 在这两种情况下，测试者将继续运行其它测试用例的测试方法。
 
-
-###添加测试方法验证你的Activity
+##添加测试方法验证你的Activity
 下一步，添加一个或多个测试方法来验证`Activity`的布局和功能性行为。
 
 例如，如果你的`Activity`中有一个`TextView`，你可以添加一个像这样的测试方法来检查它是否有正确的标签文本：
@@ -138,13 +134,6 @@ So Easy...参照之前建立测试环境中的内容，打开运行配置，配�
 可以看到测试用例通过测试，没有任何错误：
 ![test_app_run3](/media/files/2014/10/01/p2_test_app_run.png)
 
-
-浏览本系列的其它文章：
-
-1. [建立测试环境](http://2dxgujun.github.io/10-01-2014/Activity-Testing-Setting-Up-Your-Test-Environment.html)
-2. [测试UI组件](http://2dxgujun.github.io/10-01-2014/Activity-Testing-Testing-UI-Components.html)
-3. [创建单元测试](http://2dxgujun.github.io/10-01-2014/Activity-Testing-Creating-Unit-Tests.html)
-4. [创建功能测试](http://2dxgujun.github.io/10-01-2014/Activity-Testing-Creating-Functional-Tests.html)
 
 <br/>
 参考：

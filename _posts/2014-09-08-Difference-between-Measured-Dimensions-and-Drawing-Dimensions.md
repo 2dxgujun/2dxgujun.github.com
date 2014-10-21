@@ -18,6 +18,7 @@ Documentation中有句话：
 这个尺寸是最近一次调用`measure`方法计算宽度后View的尺寸，它应该仅仅用在测量和布局的计算中。
 但是如果你自己在实现布局，你可能要用到Measured Dimensions。
 
+<!-- more -->
 
 #Drawing Dimensions
 ---

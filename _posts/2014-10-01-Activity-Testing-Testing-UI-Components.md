@@ -12,6 +12,7 @@ date: 2014-10-01
 
 完整的测试用例代码，请参考实例工程[AndroidTestingFun](/media/files/2014/10/01/AndroidTestingFun.zip)中的ClickFunActivityTest.java。
 
+<!-- more -->
 
 #使用Instrumentation框架创建一个UI测试用例
 ---
@@ -19,7 +20,7 @@ date: 2014-10-01
 
 为了安全的注入`Intent`对象到你的`Activity`或者在UI线程运行测试方法，你可以继承`ActivityInstrumentationTestCase2`这个类。想要了解跟多关于如何在UI线程运行测试的方法，请参看[Testing on the UI thread](http://developer.android.com/tools/testing/activity_testing.html#RunOnUIThread)。
 
-###设置测试夹具
+##设置测试夹具
 当你在设置UI测试的夹具时，你需要在`setUp()`方法中指定[touch mode](http://developer.android.com/guide/topics/ui/ui-events.html#TouchMode)。把touch mode设置成true可以防止UI组件抢夺你编程指定的点击方法的焦点事件（比如，一个按钮可以通过编程触发它的点击监听器），确保你在调用`getActivity()`方法之前调用了`setActivityInitialTouchMode()`方法。
 
 例如：
@@ -44,7 +45,6 @@ public class ClickFunActivityTest
 }
 {% endhighlight %}
 
-<br/>
 #添加测试方法验证UI表现
 ---
 你的UI测试目标应该包括：
@@ -55,7 +55,7 @@ public class ClickFunActivityTest
 
 接下来的部分会示范如何编写测试方法，完成上面的测试目标。
 
-###验证Button布局参数
+##验证Button布局参数
 你应该添加一个像这样的测试方法来验证按钮是否正确地显示在你的`Activity`中：
 
 {% highlight java %}
@@ -80,7 +80,7 @@ public void testClickMeButton_layout() {
 `@MediumTest`注解用于把测试方法按规模大小归类，这和测试的绝对执行时间有关。要了解更多关于如何使用测试注解，请参考[使用测试注解](#使用测试注解)。
 
 
-###验证TextView的布局参数
+##验证TextView的布局参数
 你应该像这样添加一个测试方法来验证一个`TextView`最初是隐藏在你的`Activity`中的：
 
 {% highlight java %}
@@ -95,7 +95,7 @@ public void testInfoTextView_layout() {
 你可以调用`getDecorView()`方法得到一个`Activity`中decor view的引用，decor view是布局层次视图中最上层的`ViewGroup`（`FrameLayout`）。
 
 
-###验证Button的行为
+##验证Button的行为
 你可以使用一个像这样的测试方法来验证当按下按钮时`TextView`变得可见：
 
 {% highlight java %}
@@ -116,7 +116,6 @@ public void testClickMeButton_clickButtonAndExpectInfoText() {
 **警告：**
 `TouchUtils`方法的目的是将事件安全地从测试线程发送到UI线程；你不应该把`TouchUtils`用在UI线程或任何标注`@UIThreadTest`的测试方法，这样做可能会抛出`WrongThreadException`异常。
 
-<a id="使用测试注解"></a>
 #使用测试注解
 ---
 下面的注解可以用于标识测试方法的规模：
@@ -131,14 +130,6 @@ public void testClickMeButton_clickButtonAndExpectInfoText() {
 通常情况下，只需要几毫秒的时间的测试方法应该被标记为`@SmallTest`；长时间运行的测试（100毫秒或更多）通常被标记为`@MediumTest`或`@LargeTest`，测试时间主要取决于该测试是否访问了网络或本地系统的资源。可以参看[Android Tools Protip](http://plus.sandbox.google.com/+AndroidDevelopers/posts/TPy1EeSaSg8)指导你更好的使用测试注解。
 
 你可以使用其它测试注解来控制测试的组织和运行。要了解更多关于其他注解的信息，见[Annotation](https://developer.android.com/reference/java/lang/annotation/Annotation.html)类参考。
-
-
-浏览本系列的其它文章：
-
-1. [建立测试环境](http://2dxgujun.github.io/10-01-2014/Activity-Testing-Setting-Up-Your-Test-Environment.html)
-2. [创建和运行一个测试用例](http://2dxgujun.github.io/10-01-2014/Activity-Testing-Creating-and-Running-a-Test-Case.html)
-3. [创建单元测试](http://2dxgujun.github.io/10-01-2014/Activity-Testing-Creating-Unit-Tests.html)
-4. [创建功能测试](http://2dxgujun.github.io/10-01-2014/Activity-Testing-Creating-Functional-Tests.html)
 
 
 <br/>

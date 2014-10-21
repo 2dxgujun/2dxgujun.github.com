@@ -5,16 +5,15 @@ category: Android Dev
 date: 2014-09-27
 ---
 
-
 Layout是Android应用中直接影响用户体验的关键部分；如果实现的不好，可能会导致你的应用消耗大量内存，同时应用会非出现卡顿。Android SDK工具集里面提供了可以帮助你定位Layout性能缺陷的工具，通过这些工具可以让你用最小的内存消耗实现流畅的UI。
-
 
 就像一个复杂的网页会减慢载入速度，你的Layout结构如果太复杂，也会造成性能问题。本文教你如何使用SDK自带工具来检查Layout并找到性能瓶颈。
 
 一个常见的误区是，用最基础的Layout结构可以使布局性能提高。然而，你的程序的每个组件和Layout都需要初始化、布置位置和绘制。例如，嵌套的`LinearLayout`可能会使得`View`的层级结构很深。此外，嵌套使用了`layout_weight`参数的 `LinearLayout`的计算量会尤其大，因为每个子元素都需要被测量两次。这对需要多次重复inflate的Layout尤其需要注意，比如使用`ListView`或`GridView`时。
 
+<!-- more -->
 
-#Inspect Your Layout（检查Layout）
+#检查Layout
 ---
 Android SDK带有一个叫做[Hierarchy Viewer](https://developer.android.com/tools/help/hierarchy-viewer.html)的工具，能够在程序运行时分析Layout。你可以用这个工具找到Layout的性能瓶颈。
 
@@ -37,7 +36,6 @@ Hierarchy Viewer会让你选择设备或者模拟器上正在运行的进程，�
 - 测量：0.977ms
 - 布置：0.167ms
 - 绘制：2.717ms
-
 
 <br/>
 **注意**：以上内容是在Android官方文档中介绍的使用Hierarchy Viewer来检查Layout的方法；但是我在用这个工具检查Layout时手边两台机都出现了以下错误：
@@ -76,8 +74,7 @@ Hierarchy Viewer在连接手机时，手机会启动View Server与其进行Socke
 
 ![hierarchy_viewer_screenshot](/media/files/2014/09/27/hierarchy_viewer_screenshot.png)
 
-
-#Revise Your Layout（修正Layout）
+#修正Layout
 ---
 因为上面的Layout性能太慢，原因在这个嵌套的LinearLayout，解决的办法可能是将Layout层级变浅变宽，而不是又窄又深。RelativeLayout作为根节点时就可以达到目的。所以，当换成基于RelativeLayout的设计时，你的Layout变成了两层。新的Layout长成这样：
 
@@ -93,8 +90,7 @@ Hierarchy Viewer在连接手机时，手机会启动View Server与其进行Socke
 
 更明显的性能差距，是当使用在LinearLayout中使用layout_weight的时候，因为会减慢“测量”的速度。这只是一个正确使用各种Layout的例子，当你使用layout_weight时一定要慎重。
 
-
-#Use Lint（使用Lint检查工具）
+#使用Lint检查工具
 ---
 经常运行Lint工具来检查Layout可能的优化方法，是个很好的实践。Lint已经取代了layoutopt工具，它拥有更强大的功能。Lint中包含的一些检测规则有：
 
@@ -103,7 +99,6 @@ Hierarchy Viewer在连接手机时，手机会启动View Server与其进行Socke
 - 没用的子节点：一个没有子节点或者背景的`Layout`应该被去掉，来提高性能。
 - 没用的父节点：一个节点如果只有一个子节点，并且它不是`ScrollView`或根节点，并且它没有背景，这样的节点应该直接被子节点取代。
 - 太深的Layout：Layout的嵌套层数太深对性能有很大影响；尝试使用更扁平的Layout，比如`RelativeLayout`或`GridLayout`来提高性能；一般最多不超过10层。
-
 
 
 <br/>

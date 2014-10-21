@@ -20,7 +20,7 @@ public class MainActivity extends Activity {
 }
 {% endhighlight %}
 
-<br/>
+<!-- more -->
 
 此时运行Android Lint工具会有一个内存泄漏的警告：
 
@@ -62,10 +62,7 @@ private boolean enqueueMessage(MessageQueue queue, Message msg, long uptimeMilli
 
 可以看到发送到消息队列的`Message`对象持有一个发送该消息的`Handler`的引用，这样系统就可以调用`Handler#handleMessage(Message)`方法来分发处理该消息。
 
-
 在Java中，非静态内部类（包括匿名内部类）持有一个隐式的外部类引用，而静态内部类不会引用外部类对象。
-
-
 
 那么泄漏发生在哪里呢？考虑下面一个例子：
 

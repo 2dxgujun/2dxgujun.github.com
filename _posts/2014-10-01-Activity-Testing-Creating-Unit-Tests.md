@@ -16,6 +16,7 @@ date: 2014-10-01
 **注意：**
 要针对系统或外部依赖进行测试，你可以使用来自Mocking框架的`Mock`类，并把它们注入到你的单元测试中。要了解更多关于Android提供的Mocking框架，请参看[Mock Object Classes](http://developer.android.com/tools/testing/testing_android.html#MockObjectClasses})。
 
+<!-- more -->
 
 #为Activity的单元测试创建一个测试用例
 ---
@@ -43,7 +44,6 @@ public class LaunchActivityTest
 }
 {% endhighlight %}
 
-<br/>
 #验证另一个Activity的启动
 ---
 你进行测试的目的可能包括：
@@ -75,14 +75,6 @@ public void testNextActivityWasLaunchedWithIntent() {
 {% endhighlight %}
 
 因为`LaunchActivity`是独立运行的，所以不可以使用`TouchUtils`库来操作UI。你可以调用`preformClick()`方法来触发`Button`的点击事件。
-
-
-浏览本系列的其它文章：
-
-1. [建立测试环境](http://2dxgujun.github.io/10-01-2014/Activity-Testing-Setting-Up-Your-Test-Environment.html)
-2. [创建和运行一个测试用例](http://2dxgujun.github.io/10-01-2014/Activity-Testing-Creating-and-Running-a-Test-Case.html)
-3. [测试UI组件](http://2dxgujun.github.io/10-01-2014/Activity-Testing-Testing-UI-Components.html)
-4. [创建功能测试](http://2dxgujun.github.io/10-01-2014/Activity-Testing-Creating-Functional-Tests.html)
 
 <br/>
 参考：
