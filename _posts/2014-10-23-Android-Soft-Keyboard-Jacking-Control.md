@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android软键盘弹出时ActionBar和位于顶部的View被顶出去的问题
+title: 关于Android软键盘弹出时主窗口整体上移的问题
 category: Android Dev
 date: 2014-10-23
 ---

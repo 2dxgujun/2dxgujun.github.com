@@ -15,7 +15,7 @@ date: 2014-10-05
 
 <!-- more -->
 
-###ScrollView嵌套AbsListView的问题
+#ScrollView嵌套AbsListView的问题
 ---
 通常，`ScrollView`嵌套`ListView`会存在两个问题：
 
@@ -26,13 +26,20 @@ date: 2014-10-05
 [四种方案解决ScrollView嵌套ListView问题](http://www.apkbus.com/android-161576-1-1.html)中的第四种方案
 
 <br/>
-###ListView中Item失去焦点，无法点击
+#ListView中Item失去焦点，无法点击
 ---
 在Item的Layout中如果放置了像`Button`，`EditText`之类的控件，这些子控件会把Item的焦点给抢掉。
 
 参考：
 [关于ListView的Item失去焦点不能点击](http://blog.csdn.net/beijingshi1/article/details/10431589)
 
+<br/>
+#Android软键盘弹出时主窗口整体上移的问题
+---
+这个问题，网上没找到写的像样的文章，就自己写了篇，针对自己遇到的问题，做了一些分析。
+
+参考：
+[关于Android软键盘弹出时主窗口整体上移的问题](/blog/2014/10/05/Android-Problem-and-Solution-Collection.html)
 
 
 <br/>
