@@ -10,7 +10,7 @@ blog:
     title:                                               JunGu Blog
     url:                                                 http://2dxgujun.com/
     duoshuo:                                             2dxgujun
-    tongji:                                              # 百度统计ID
+    tongji:                                              2dxgujun
     qiniu:                                               # 七牛云地址
 author:
     name:                                                JunGu
