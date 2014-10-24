@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Java工厂方法模式（Factory Method Pattern）——解决简单工厂模式的弊端
+title: Java工厂方法模式（Factory Method）——解决简单工厂模式的弊端
 category: Design Pattern
 date: 2014-10-06
 ---

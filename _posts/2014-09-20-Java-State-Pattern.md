@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Java状态模式（State Pattern）——处理对象的多种状态及其相互转换
+title: Java状态模式（State）——处理对象的多种状态及其相互转换
 category: Design Pattern
 date: 2014-09-20
 ---
