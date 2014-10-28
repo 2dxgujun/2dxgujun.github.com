@@ -13,8 +13,6 @@ date: 2014-10-05
 
 废话不多说，开始吧！
 
-<!-- more -->
-
 #ScrollView嵌套AbsListView的问题
 ---
 通常，`ScrollView`嵌套`ListView`会存在两个问题：
@@ -24,6 +22,8 @@ date: 2014-10-05
 
 参考：
 [四种方案解决ScrollView嵌套ListView问题](http://www.apkbus.com/android-161576-1-1.html)中的第四种方案
+
+<!-- more -->
 
 <br/>
 #ListView中Item失去焦点，无法点击

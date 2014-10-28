@@ -94,24 +94,15 @@ date: 2014-10-23
 
 它的设置必须是下面列表中的一个值，或一个"state"值加一个"adjust"值的组合，各个值之间用 | 分开。
 
-
-- **stateUnspecified**：默认状态，系统将选择一个合适的状态或依赖于主题的设置。
-
-- **stateUnchanged**：当这个`Activity`出现时，软键盘将一直保持上一个`Activity`里的状态，无论是隐藏还是显示。
-
-- **stateHidden**：当这个`Activity`出现时，软键盘总是被隐藏。
-
-- **stateAlwaysHidden**：当这个`Activity`主窗口获取焦点时，软键盘总是被隐藏。
-
-- **stateVisible**：当这个`Activity`出现时（`Activity`中有可以获取输入焦点的控件），软键盘通常是可见的。
-
-- **stateAlwaysVisible**：当这个`Activity`出现时，软键盘总是弹出。
-
-- **adjustUnspecified**：默认行为，系统将根据窗口中的布局自动调整窗口大小。
-
-- **adjustResize**：这个`Activity`主窗口总是调整屏幕的大小以便留出软键盘的空间；这个选项不能和adjustPan同时使用，如果这两个属性都没有被设置，系统会根据窗口中的布局自动选择其中一个。
-
-- **adjustPan**：这个`Activity`主窗口并不调整屏幕的大小以便留出软键盘的空间；相反，当前窗口中获取输入焦点的控件会自动移动到软键盘上方以便用户总是能看到输入内容的部分；这个选项不能和adjustPan同时使用，如果这两个属性都没有被设置，系统会根据窗口中的布局自动选择其中一个。
+1. **stateUnspecified**：默认状态，系统将选择一个合适的状态或依赖于主题的设置。
+2. **stateUnchanged**：当这个`Activity`出现时，软键盘将一直保持上一个`Activity`里的状态，无论是隐藏还是显示。
+3. **stateHidden**：当这个`Activity`出现时，软键盘总是被隐藏。
+4. **stateAlwaysHidden**：当这个`Activity`主窗口获取焦点时，软键盘总是被隐藏。
+5. **stateVisible**：当这个`Activity`出现时（`Activity`中有可以获取输入焦点的控件），软键盘通常是可见的。
+6. **stateAlwaysVisible**：当这个`Activity`出现时，软键盘总是弹出。
+7. **adjustUnspecified**：默认行为，系统将根据窗口中的布局自动调整窗口大小。
+8. **adjustResize**：这个`Activity`主窗口总是调整屏幕的大小以便留出软键盘的空间；这个选项不能和adjustPan同时使用，如果这两个属性都没有被设置，系统会根据窗口中的布局自动选择其中一个。
+9. **adjustPan**：这个`Activity`主窗口并不调整屏幕的大小以便留出软键盘的空间；相反，当前窗口中获取输入焦点的控件会自动移动到软键盘上方以便用户总是能看到输入内容的部分；这个选项不能和adjustPan同时使用，如果这两个属性都没有被设置，系统会根据窗口中的布局自动选择其中一个。
 
 <br/>
 现在再回过头来看看我遇到的那个问题；我的猜测是没有设置`android:windowSoftInputMode`属性的主窗口会在弹出软键盘时检测当前需要做调整的布局中是否嵌套了`ScrollView`，再判断`ScrollView`是否设置了`android:scrollbars="none"`属性，如果设置了则不允许通过滚动`ScrollView`中的Content来达到调整屏幕内容留出用于放置软键盘空间的效果。
