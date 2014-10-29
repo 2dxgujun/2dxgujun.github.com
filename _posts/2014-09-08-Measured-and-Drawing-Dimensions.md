@@ -79,7 +79,7 @@ Log Info:
 
 > measuredWidth: 107, measuredHeight: 29
 
-这里在`LinearLayout`里添加了一个`TextView`，如果要得到`TextView`的宽，那么是要在`TextView`添加到`LinearLayout`后再获取值，这里放在`onDraw`方法中。在一个`View`初始化时，即在构造函数当中我们是得不到`View`的实际大小的；`getWidth`和`getMeasuredWidth`方法得到的结果都是0，这是因为这个`View`还未完成布局尺寸的测量，当然也就没有完成布局了。关于如何正确地获取控件布局尺寸的方法，请参考[我的另一篇博文](http://2dxgujun.github.io/09-05-2014/Get-Drawing-Dimensions-after-Layout.html)。
+这里在`LinearLayout`里添加了一个`TextView`，如果要得到`TextView`的宽，那么是要在`TextView`添加到`LinearLayout`后再获取值，这里放在`onDraw`方法中。在一个`View`初始化时，即在构造函数当中我们是得不到`View`的实际大小的；`getWidth`和`getMeasuredWidth`方法得到的结果都是0，这是因为这个`View`还未完成布局尺寸的测量，当然也就没有完成布局了。关于如何正确地获取控件布局尺寸的方法，请参考[我的另一篇博文](/post/2014/09/06/Get-Drawing-Dimensions.html)。
 
 可以看到Measured Dimensions和Drawing Dimensions是一样的，说明这个`TextView`实际尺寸和根据内容测量出来的尺寸是一致的。事实也正是如此，这个`TextView`的宽和高默认被初始化成`ViewGroup.LayoutParams.WRAP_CONTENT`，它的Measured Dimensions就是"Hello World"这个字符串的所占的宽高；因为这个`TextView`被完整的放置在`LinearLayout`中，Drawing Dimensions也就是内容的宽高。
 
