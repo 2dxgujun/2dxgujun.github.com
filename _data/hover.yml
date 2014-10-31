@@ -1,4 +1,5 @@
 ﻿- href: http://hukai.me/android-training-course-in-chinese/index.html
-  icon: res/img/hover/01.png
+  icon: /res/img/hover/01.png
   title: Training
+  newblank: true
 # newblank: true 是否开启一个新的页面
