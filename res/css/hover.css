@@ -42,9 +42,3 @@ ul#navigation li a span{
     color:#60ACD8;
     text-shadow: 0 -1px 1px #fff;      
 }
-ul#navigation .training a{
-    background-image: url(../img/nav/01.png);
-}
-ul#navigation .progress a      {
-    background-image: url(../img/nav/03.png);
-}

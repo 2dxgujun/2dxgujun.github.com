@@ -1,0 +1,5 @@
+<ul id="navigation">
+{% for hover in site.data.hover %}
+<li><a href="{{ hover.href }}" {% if hover.newblank == true %}target="_blank"{% endif %}  style="background-image:url({{ hover.icon }})"><span>{{ hover.title }}</span></a></li>
+{% endfor %}
+</ul>
