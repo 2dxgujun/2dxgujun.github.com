@@ -307,4 +307,4 @@ RestAdapter restAdapter = new RestAdapter.Builder()
 1. [Retrofit – Java(Android) 的REST 接口封装类库](http://blog.chengyunfeng.com/?p=491)
 2. [Retrofit Github项目主页](http://square.github.io/retrofit/)
 
-本文出自[2dxgujun](http://github.com/2dxgujun)，转载时请注明出处及相应链接。
+本文出自[2dxgujun](http://2dxgujun.com/)，转载时请注明出处及相应链接。

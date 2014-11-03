@@ -39,7 +39,15 @@ date: 2014-10-05
 这个问题，网上没找到写的像样的文章，就自己写了篇，针对自己遇到的问题，做了一些分析。
 
 参考：
-[关于Android软键盘弹出时主窗口整体上移的问题](/blog/2014/10/05/Android-Problem-and-Solution-Collection.html)
+[关于Android软键盘弹出时主窗口整体上移的问题](/post/2014/10/05/Android-Problem-and-Solution-Collection.html)
+
+<br/>
+#Android Studio无法导入apklib依赖
+---
+关于Android Studio导入Maven apklib时遇到问题的分析，介绍了一种另辟蹊径的解决方法。
+
+参考：
+[当Android Studio遇到Maven打包的apklib](/post/2014/11/03/Maven-APKLIB-with-Android-Studio.html)
 
 
 <br/>
