@@ -28,6 +28,8 @@ date: 2014-11-07
 ![structure](/media/files/pattern/decorator/structure.png)
 <div align="center">图1 装饰模式结构图</div>
 
+<!-- more -->
+
 #角色
 ---
 **Component（抽象构件）**
