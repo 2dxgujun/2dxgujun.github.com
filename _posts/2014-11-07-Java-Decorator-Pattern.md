@@ -123,6 +123,7 @@ Sunny软件公司的开发人员针对上述要求，提出了一个基于继承
 总之，图3不是一个好的设计方案，怎么办？如何让系统中的类可以进行扩展但是又不会导致类数目的急剧增加？不用着急，让我们先来分析为什么这个设计方案会存在如此多的问题。**根本原因在于复用机制的不合理**，图3采用了继承复用，例如在`ScrollBarWindow`中需要复用`Window`类中定义的`display()`方法，同时又增加新的方法`setScrollBar()`，`ScrollBarTextBox`和`ScrollBarListBox`都必须做类似的处理，在复用父类的方法后再增加新的方法来扩展功能。根据“合成复用原则”，**在实现功能复用时，我们要多用关联，少用继承**，因此我们可以换个角度来考虑，将`setScrollBar()`方法抽取出来，封装在一个独立的类中，在这个类中定义一个`Component`类型的对象，通过调用`Component`的`display()`方法来显示最基本的构件，同时再通过`setScrollBar()`方法对基本构件的功能进行增强。由于`Window`、`ListBox`和`TextBox`都是`Component`的子类，根据“里氏代换原则”，程序在运行时，我们只要向这个独立的类中注入具体的`Component`子类的对象即可实现功能的扩展。这个独立的类一般称为装饰器(Decorator)或装饰类，顾名思义，它的作用就是对原有对象进行装饰，通过装饰来扩展原有对象的功能。
 
 **解决方案**
+
 为了让系统具有更好的灵活性和可扩展性，克服继承复用所带来的问题，Sunny公司开发人员使用装饰模式来重构图形界面构件库的设计，其中部分类的基本结构如图4所示：
 ![visual_component_design](/media/files/pattern/decorator/visual_component_design.png)
 <div align="center">图4 图形界面构件库结构图</div>

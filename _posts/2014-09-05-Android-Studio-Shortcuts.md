@@ -41,6 +41,7 @@ Toggle Bookmark with Mnemonic（添加/移除带标记的书签）: `Ctrl + F11`
 Show Bookmarks（显示书签列表）: `Shift + F11`<br/>
 Expand（展开代码）: `Ctrl + =`<br/>
 Collapse（折叠代码）: `Ctrl + -`<br/>
+Rearrange Code（重新排列代码）：`Ctrl + Alt + K`<br/>
 
 #难得使用
 ---
