@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>170</x>
+      <y>110</y>
+      <w>200</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>/Component/
+{abstract}
+--
++operation(): void
++add(c: Component): void
++remove(c: Component): void
++getChild(i: int): Component</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>50</x>
+      <y>290</y>
+      <w>200</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Leaf
+--
++operation(): void
++add(c: Component): void
++remove(c: Component): void
++getChild(i: int): Component</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>290</x>
+      <y>290</y>
+      <w>200</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Composite
+--
++operation(): void
++add(c: Component): void
++remove(c: Component): void
++getChild(i: int): Component</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>120</x>
+      <y>200</y>
+      <w>150</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>130;30;130;60;30;60;30;90</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>260</x>
+      <y>200</y>
+      <w>150</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>30;30;30;60;130;60;130;90</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>340</x>
+      <y>100</y>
+      <w>214</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+m1=children</panel_attributes>
+    <additional_attributes>150;200;190;200;190;30;30;30</additional_attributes>
+  </element>
+</diagram>

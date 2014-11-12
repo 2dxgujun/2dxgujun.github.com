@@ -40,7 +40,7 @@ compile 'com.actionbarsherlock:library:4.1.0'
 
 结果写完，Sync一下，各种错啊有没有，看那个错误就是没有找到这个库中包含的类和资源；这我就不能理解了，依赖命名已经添加了，Gradle也把依赖的包下载下来了，此处省略1W字……
 
-仔细查看pom.xml文件，发现那些提示没有找到类或资源的Lib的`<dependency>`标签中都有一个`<type>apklib</type>`，这是什么玩意，此处省略1W字……
+仔细查看pom.xml文件，发现那些提示没有找到类或资源的Lib的`<dependency>`标签中都有一个`<type>apklib</type>`，这是什么玩意？
 
 直接看下面一张图，Android Studio提供的依赖库的列表：
 ![external libraries](/media/files/2014/11/3/external libraries.png)
