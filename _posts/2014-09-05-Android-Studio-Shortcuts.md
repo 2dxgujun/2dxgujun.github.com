@@ -42,6 +42,7 @@ Show Bookmarks（显示书签列表）: `Shift + F11`<br/>
 Expand（展开代码）: `Ctrl + =`<br/>
 Collapse（折叠代码）: `Ctrl + -`<br/>
 Rearrange Code（重新排列代码）：`Ctrl + Alt + K`<br/>
+Find in Path...（查找文件内容）：`Ctrl + Shift + F`<br/>
 
 #难得使用
 ---

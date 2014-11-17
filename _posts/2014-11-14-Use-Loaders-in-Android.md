@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Android Loaders异步加载框架简介
+title: Android装载器（Loaders）框架简介
 category: Android Dev
-date: 2014-11-13
+date: 2014-11-14
 ---
 
 Loaders从Android3.0开始引进（Loaders被翻译为装载器，它是一个异步加载数据的框架），它能在`Activity`或`Fragment`中异步加载数据；装载器具有如下特性：
@@ -37,7 +37,7 @@ Loaders从Android3.0开始引进（Loaders被翻译为装载器，它是一个�
 上面所列的类和接口们是在应用中实现装载器时的核心组件，你的装载器并不一定需要用到所有的组件，但是你总是需要使用`LoaderManager`来初始化一个装载器。
 
 下面这张UML图简单地描述了装载器框架结构：
-![loaders](/media/files/2014/11/12/loaders.png)
+![loaders](/media/files/2014/11/13/loaders.png)
 
 
 #使用加载器
@@ -77,16 +77,16 @@ getLoaderManager().initLoader(0, null, this);
 我用ApiDemo中的`LoaderCursor`做了下测试，总结出以下**几个主要的生命周期过程**：
 
 > 调用`initLoader()`方法，且装载器还没有被创建：
-> `onCreateLoader()`→`onLoadFinished()`
+> `onCreateLoader()`-->`onLoadFinished()`
 > 
 > 调用`restartLoader()`方法重启装载器：
-> `onCreateLoader()`→`onLoadFinished()`
+> `onCreateLoader()`-->`onLoadFinished()`
 > 
 > 按Back键回退（注意按Home键不会触发调用，Back与Home代表了不同的用户行为）：
 > `onLoaderReset()`
 > 
-> 调用`initLoader()`方法，且装载器实例已经存在
-> `initLoader()`→`onLoadFinished()`
+> 调用`initLoader()`方法，且装载器实例已经存在：
+> `onLoadFinished()`
 
 
 **注意：**
@@ -200,7 +200,7 @@ public void onLoaderReset(Loader<Cursor> loader) {
 Android官方提供了三个关于装载器的ApiDemo，分别是：
 
 1. LoaderCursor.java：使用`CursorLoader`装载器从联系人content provider读取联系人集合，并显示在`Fragment`中。
-2. LoaderThrottle.java：使用Throttle来减少对content provider查询的次数，非常全面的一个Demo。
+2. LoaderThrottle.java：使用节流装载器来减少对content provider查询的次数，非常全面的一个Demo；参考我的另外一篇文章：[节流装载器（Throttle Loaders）的使用示例](/post/2014/11/14/Fully-Demonstration-of-Throttling-Loaders.html)。
 3. LoaderCustom.java：实现了一个自定义的一个Loader，来实现对特定数据的加载。
 
 
@@ -211,4 +211,4 @@ Android官方提供了三个关于装载器的ApiDemo，分别是：
 2. [Android Loader详解](http://blog.csdn.net/niu_gao/article/details/7244117)
 3. [LoaderManager及Loader初步探索](http://blog.sina.com.cn/s/blog_62c5894901014g5x.html)
 
-本文出自[2dxgujun](http://2dxgujun.com/)，转载时请注明出处及相应链接。
+本文出自[2dxgujun](/)，转载时请注明出处及相应链接。

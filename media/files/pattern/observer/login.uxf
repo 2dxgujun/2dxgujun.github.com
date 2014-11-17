@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>210</x>
+      <y>80</y>
+      <w>220</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>LoginEvent
+--
+-username: String {setter, getter}
+-password: String (setter, getter)
+--
++LoginEvent()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>180</x>
+      <y>230</y>
+      <w>290</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>LoginBean
+--
+-lel: LoginEventListener
+-le: LoginEvent
+--
++LoginBean()
++addLoginEventListener(
+   lel: LoginEventListener) : void
++fireLoginEvent(obj: Object,
+   username: String, password: String): void
++actionPerformed(event: ActionEvent): void
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Interface</type>
+    <coordinates>
+      <x>540</x>
+      <y>230</y>
+      <w>260</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>LoginEventListener
+--
++validateLogin(event: LoginEvent): void
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>540</x>
+      <y>340</y>
+      <w>260</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>LoginValidatorA
+--
++LoginValidatorA()
++validateLogin(event: LoginEvent): void
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>540</x>
+      <y>460</y>
+      <w>260</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>LoginValidatorB
+--
++LoginValidatorA()
++validateLogin(event: LoginEvent): void
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>290</x>
+      <y>140</y>
+      <w>50</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m2=le</panel_attributes>
+    <additional_attributes>30;30;30;90</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>400</x>
+      <y>60</y>
+      <w>290</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>30;30;270;30;270;170</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>440</x>
+      <y>210</y>
+      <w>240</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m2=lel</panel_attributes>
+    <additional_attributes>220;30;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>640</x>
+      <y>210</y>
+      <w>220</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>40;30;200;30;200;130;200;220;30;220;30;250</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>640</x>
+      <y>260</y>
+      <w>50</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>30;30;30;80</additional_attributes>
+  </element>
+</diagram>

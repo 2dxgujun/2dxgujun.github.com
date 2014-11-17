@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>40</x>
+      <y>50</y>
+      <w>270</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>Observable
+{abstract}
+--
+-changed: boolean = false
+-obs: Vector
+--
++Observable()
++addObserver(o: Observer): void
++deleteObserver(o: Observer): void
++notifyObservers(): void
++notifyObservers(arg: Object): void
++deleteObservers(): void
++setChanged(): void
++clearChanged(): void
++hasChanged(): boolean
++countObservers(): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Interface</type>
+    <coordinates>
+      <x>380</x>
+      <y>50</y>
+      <w>260</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Observer
+--
++update(o: Observable, arg: Object): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>280</x>
+      <y>10</y>
+      <w>240</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m2=obs
+0..n</panel_attributes>
+    <additional_attributes>220;50;30;50</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>280</x>
+      <y>70</y>
+      <w>130</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>30;30;110;30</additional_attributes>
+  </element>
+</diagram>
