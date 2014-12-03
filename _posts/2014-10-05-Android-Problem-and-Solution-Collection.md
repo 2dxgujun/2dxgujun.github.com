@@ -49,6 +49,17 @@ date: 2014-10-05
 参考：
 [当Android Studio遇到Maven打包的apklib](/post/2014/11/03/Maven-APKLIB-with-Android-Studio.html)
 
+<br/>
+#AS 调用getClass()方法时出现Ambiguous method call错误
+---
+在Android Studio中调用对象的getClass()方法时会出现上面的错误提示。
+人家说这是一个从IntelliJ上遗留下来的BUG，调用getClass()方法时，使用下面的形式就可以了-0-
+`((Object) this).getClass()`
+
+参考：
+[Android Studio - Ambiguous method call getClass()](http://stackoverflow.com/questions/18505973/android-studio-ambiguous-method-call-getclass)
+
+
 
 <br/>
 本文出自[2dxgujun](http://github.com/2dxgujun)，转载时请注明出处及相应链接。
