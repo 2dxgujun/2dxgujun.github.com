@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Android装载器（Loaders）框架简介
-category: Android Dev
+category: Android
 date: 2014-11-14
 ---
 

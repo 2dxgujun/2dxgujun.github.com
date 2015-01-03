@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Android Studio常用快捷键整理
-category: Android Dev
+category: Android
 date: 2014-09-05
 ---
 

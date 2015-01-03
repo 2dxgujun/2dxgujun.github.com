@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Android和JavaScript互相调用
-category: Android Dev
+category: Android
 date: 2014-08-25
 ---
 

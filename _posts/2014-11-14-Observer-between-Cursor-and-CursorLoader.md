@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Cursor和CursorLoader中的观察者模式
-category: Android Src
+category: Android
 date: 2014-11-14
 ---
 

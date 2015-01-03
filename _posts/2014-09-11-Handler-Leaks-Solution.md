@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 简析Handler造成的Context泄漏，以及解决方法
-category: Android Dev
+category: Android
 date: 2014-09-11
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Java单例模式（Singleton）
-category: 
+category: Design Pattern
 date: 2014-10-23
 ---
 
@@ -193,7 +193,7 @@ public class LazySingleton {
     private LazySingleton() {...}
     public static LazySingleton getInstance() {
         if (instance == null) { // 第一重判断
-            synchronized (LazySingleton,class) {
+            synchronized (LazySingleton.class) {
                 if (instance == null) { // 第二重判断
                     instance = new LazySingleton();
                 }

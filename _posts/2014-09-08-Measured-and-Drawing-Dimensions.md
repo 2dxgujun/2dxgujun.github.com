@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Measured Dimensions和Drawing Dimensions的不同
-category: Android Dev
+category: Android
 date: 2014-09-08
 ---
 

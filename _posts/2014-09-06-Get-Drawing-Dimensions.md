@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Android正确地获取控件布局尺寸的方法
-category: Android Dev
+category: Android
 date: 2014-09-06
 ---
 

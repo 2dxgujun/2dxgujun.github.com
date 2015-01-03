@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 节流装载器（Throttle Loaders）的使用示例
-category: Android Dev
+category: Android
 date: 2014-11-14
 ---
 
