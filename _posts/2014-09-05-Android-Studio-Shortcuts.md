@@ -8,8 +8,8 @@ date: 2014-09-05
 
 这篇文章记录了一些Android Studio中常用的快捷键，我会根据自己的使用情况，不定期做一些修改。
 
-#频繁使用
----
+# 频繁使用
+
 Delete Line（删除行）: `Ctrl + Y`<br/>
 Select Word at Caret（选中一段代码，可连按）: `Ctrl + W`<br/>
 Paramter Info（方法参数提示）: `Ctrl + P`<br/>
@@ -28,8 +28,8 @@ Generate...（生成代码，如getter，setter方法）: `Alt + Insert`<br/>
 Basic（代码提示）[Custom]: `Alt + /`<br/>
 Fix doc comment（添加JavaDoc注释）[Custom]: `Alt + Shift + J`<br/>
 
-#经常使用
----
+# 经常使用
+
 Run（运行）: `Shift + F10`<br/>
 Select Previous/Next Tab（切换代码Tab）: `Alt + Left/Right`<br/>
 Close（关闭当前Tab）: `Ctrl + F4`<br/>
@@ -44,8 +44,8 @@ Collapse（折叠代码）: `Ctrl + -`<br/>
 Rearrange Code（重新排列代码）：`Ctrl + Alt + K`<br/>
 Find in Path...（查找文件内容）：`Ctrl + Shift + F`<br/>
 
-#难得使用
----
+# 很少使用
+
 Highlight Usages in File（高亮选中文本）: `Ctrl + Shift + F7`<br/>
 Recent Files（最近打开的文件）: `Ctrl + E`<br/>
 Recent Changes（对比最近修改的代码）: `Alt + Shift + C`<br/>
@@ -65,7 +65,4 @@ VCS Operations Popup...（VCS操作弹窗）: `Alt + 后引号`<br/>
 Class Name Completion（类名或接口名提示）: `Ctrl + Alt + Space`<br/>
 
 
-<br/>
-参考：
-
-本文出自[2dxgujun](http://github.com/2dxgujun)，转载时请注明出处及相应链接。
+本文出自[2dxgujun](/)，转载时请注明出处及相应链接。

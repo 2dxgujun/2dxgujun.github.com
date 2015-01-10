@@ -1,29 +1,29 @@
 ---
 layout: post
-title: 关于Android软键盘弹出时主窗口整体上移的问题
-category: Android Dev
+title: 简析Android软键盘弹出时窗口上移的问题
+category: Android
 date: 2014-10-23
 ---
 
-昨天在做一个页面，大概是这样子的：
-![sample](/media/files/2014/10/23/sample.png)
+昨天在设计一个页面，大概框图如下：
+![sample](/media/2014/10/23/sample.png)
 
 <!-- more -->
 
-顶部有一个原生的`ActionBar`和一个自定义的`ActionBar`，然后中间一段Content，最下面有一个`EditText`；当`EditText`获取焦点时，会弹出软键盘：
-![soft_keyboard_pop](/media/files/2014/10/23/soft_keyboard_pop.png)
+顶部有一个原生的`ActionBar`和一个自定义的`ActionBar`，然后中间一段内容，最下面有一个`EditText`；当`EditText`获取焦点时，会弹出软键盘：
+![soft_keyboard_pop](/media/2014/10/23/soft_keyboard_pop.png)
 注意到顶部的原生`ActionBar`和我自定义的`ActionBar`被软键盘给顶出去了...我想要的效果是，顶部的两个`ActionBar`保持不动，然后下面的Content被顶上去，同时被`ActionBar`覆盖掉顶上去的那部分。
 
 网上有一种解决方法说是给`Activity`设置`android:windowSoftInputMode="adjustPan"`，我试过，不管用。
 
-百度了一下：**Android sdk目前提供的软键盘弹出模式接口只有两种，一是弹出时自动冲回界面，将所有元素上顶，另一种则是不重绘界面，直接将控件元素遮住，没有其他模式，如果想实现其他效果，光使用接口是不行的**。
+百度了一下：**Android SDK目前提供的软键盘弹出模式接口只有两种，一是弹出时自动冲回界面，将所有元素上顶，另一种则是不重绘界面，直接将控件元素遮住，没有其他模式，如果想实现其他效果，光使用系统接口是不行的**。
 
-但是实际上这个问题很容易解决，但是网上都是在贴子里讨论这个问题，众人给出来各种各样的Answer，大部分都是不可用，或者不适用于我这种情况的，所以我写下这篇文章总结一下这个问题。
+实际上这类问题很容易解决，网上已经有很多贴子讨论过这个问题，针对我这种情况，写下这篇文章总结一下这个问题。
 
-#解决方法
----
+# 解决方法
+
 解决问题的关键就在于`ScrollView`：给想要被顶上去的内容（包括下面那个`EditText`）嵌套一个`ScrollView`：
-![scrollview_nested](/media/files/2014/10/23/scrollview_nested.png)
+![scrollview_nested](/media/2014/10/23/scrollview_nested.png)
 
 图中红色的框就是`ScrollView`应该在页面中所处的位置。
 
@@ -73,9 +73,9 @@ date: 2014-10-23
 </LinearLayout>
 {% endhighlight %}
 
-如果你按照上面的写法，到这里这个问题已经解决了。
+如果不出意外，到这里这个问题已经解决了。
 
-**可是**生活就是这样，到处充满了坑...我在项目中用了上面的方法还是没有解决问题，于是我开始一行行的对比代码，最后我剔除了所有不一样的地方，发现我给`ScrollView`设置了一个`android:scrollbars="none"`属性，把这个属性去掉问题就解决了...不太明白为什么，源码貌似涉及C++，看不到...
+可是我在这里遇到了一个坑...我还没有解决这个问题。最后我发现我的`ScrollView`设置了一个`android:scrollbars="none"`属性，把这个属性去掉问题就解决了...不太明白为什么，貌似涉及底层代码，观摩不到...
 
 可是作为一个强迫症小青年，我偏不想去掉这个属性，怎么办？
 
@@ -84,8 +84,8 @@ date: 2014-10-23
 
 下面我就来分析一下这个`android:windowSoftInputMode`属性
 
-#android:windowSoftInputMode
----
+# android:windowSoftInputMode
+
 这个属性用于设置`Activity`主窗口与软键盘的交互模式，可以用来避免软键盘面板遮挡内容的问题。
 这个属性能影响两件事：
 
@@ -115,4 +115,4 @@ date: 2014-10-23
 2. [android:windowSoftInputMode属性详解](http://blog.csdn.net/twoicewoo/article/details/7384398)
 3. [软键盘覆盖EditText，使用ScrollView的详解](http://www.eoeandroid.com/thread-53414-1-1.html)
 
-本文出自[2dxgujun](http://2dxgujun.com/)，转载时请注明出处及相应链接。
+本文出自[2dxgujun](/)，转载时请注明出处及相应链接。

@@ -5,10 +5,10 @@ category: Android
 date: 2014-11-14
 ---
 
-在我之前的一篇文章：[节流装载器（Throttle Loaders）的使用示例](/post/2014/11/14/Fully-Demonstration-of-Throttling-Loaders.html)中简单的提了下`Cursor`和`CursorLoader`中所应用的观察者模式，这篇文章将从源码角度详细的分析一下这个观察者模式的具体实现。
+在我之前的一篇文章：[节流装载器（Throttle Loaders）的使用示例](/post/2014/11/14/Demonstration-of-Loaders.html)中简单的提了下`Cursor`和`CursorLoader`中所应用的观察者模式，这篇文章将从源码角度详细的分析一下这个观察者模式的具体实现。
 
-#前言
----
+# 前言
+
 首先我们要搞清楚这里为什么使用观察者模式，它被用来完成什么工作。
 
 之前我在介绍装载器（Loaders）时，说到它有一个很重要的特性：**监视数据源的改变，并在数据源发生变化时传送新的结果**；参考[Android装载器（Loaders）框架简介](/post/2014/11/14/Use-Loaders-in-Android.html)。
@@ -17,9 +17,9 @@ date: 2014-11-14
 
 <!-- more -->
 
-#API概述
----
-在之前那篇[节流装载器（Throttle Loaders）的使用示例](/post/2014/11/14/Fully-Demonstration-of-Throttling-Loaders.html)中，我们总共用到了下面的几个类：
+# API概述
+
+在之前那篇[节流装载器（Throttle Loaders）的使用示例](/post/2014/11/14/Demonstration-of-Loaders.html)中，我们总共用到了下面的几个类：
 
 1. `ContentProvider`：它对数据库CRUD操作进行了封装，提供了对外分享数据的接口；
 2. `ContentResolver`：它通过URI来访问`ContentProvider`；
@@ -31,8 +31,8 @@ date: 2014-11-14
 下面我们将采用倒推的方式一步一步的学习。
 
 
-#第一个观察者模式
----
+# 第一个观察者模式
+
 首先我们要找到观察者模式的切入点，在之前的那篇[节流装载器（Throttle Loaders）的使用示例](/post/2014/11/14/Fully-Demonstration-of-Throttling-Loaders.html)中的`ContentProvider`的实现中我们在`query()`方法的最后调用了`c.setNotificationUri(getContext().getContentResolver(), uri)`；在`insert()、delete()、update()`方法的最后调用了`getContext().getContentResolver().notifyChange(noteUri, null)`。
 
 我们看一下源码，`AbstractCursor#setNotificationUri()`：
@@ -80,7 +80,7 @@ public void registerContentObserver(Uri uri, boolean notifyForDescendents,
 
 好了，到这里你会发现我们在客户端调用`AbstractCursor#setNotificationUri()`方法一路通过`ContentResover#registerContentObserver()`、`ContentService#registerContentObserver()`方法才真正注册了观察者；到这里目标和观察者就很明确了。
 
-##目标和观察者
+## 目标和观察者
 
 - 目标：`ContentService`
 - 观察者：`AbstractCursor$SelfContentObserver`
@@ -103,10 +103,12 @@ public void notifyChange(Uri uri, ContentObserver observer, boolean syncToNetwor
 到此，这个观察者模式已经水落石出了！在`ContentProvider#query()`方法的最后注册的观察者，在`insert()、delete()、update()`方法的最后被通知；这样就实现了当数据发生改变时发送通知更新数据。
 
 下面这张图大概描述了这个观察者的框架：
-![framework_1](/media/files/2014/11/14/framework_1.png)
+![framework_1](/media/2014/11/14/framework_1.png)
 
 下面我们就要来看看这个观察者被通知后做了什么工作。
-##观察者类
+
+## 观察者类
+
 前面已经提到了这个观察者类是`AbstractCursor#SelfContentObserver`，这是一个非静态内部类：
 {% highlight java %}
 protected static class SelfContentObserver extends ContentObserver {
@@ -153,8 +155,8 @@ What...
 
 这里代码怎么又像是在通知观察者...没错，它的确是在通知观察者，这又是另一个观察者模式了，晕乎，下面我们来介绍第二个观察者模式。
 
-#第二个观察者模式
----
+# 第二个观察者模式
+
 Ctrl + F搞起来... 一共找到下面几处（除了上面的`onChange()`方法）：
 {% highlight java %}
 ContentObservable mContentObservable = new ContentObservable();
@@ -209,7 +211,7 @@ public Cursor loadInBackground() {
 
 `ContentObserver`是用来接收数据变化时的观察者，可以异步派发接收到的通知，在`Loader`中实现了它的子类`ForceLoadContentObserver`。
 
-##目标与观察者
+## 目标与观察者
 
 - 目标：`AbstractCursor`
 - 观察者：`Loader$ForceLoadContentObserver`
@@ -217,11 +219,12 @@ public Cursor loadInBackground() {
 到此，第二个观察者模式也已经水落石出了！在`CursorLoader#loadInBackground()`方法中注册的观察者，在第一个观察者接收到通知后接着被通知；这样当数据发生改变时这个通知就传递到了真正干活的兄弟身上。
 
 下面这张图大概描述了这个观察者的框架：
-![framework_2](/media/files/2014/11/14/framework_2.png)
+![framework_2](/media/2014/11/14/framework_2.png)
 
 下面我们就要来看看这个观察者里做了什么工作。
 
-##观察者
+## 观察者
+
 这个观察者类定义在`Loader`中，这也是一个非静态内部类：
 {% highlight java %}
 /**
@@ -241,20 +244,15 @@ public final class ForceLoadContentObserver extends ContentObserver {
 
 注意到它重写了`onChange()`方法，调用了`Cursor#onContentChanged()`方法，然后就是一层一层的实现，最终调用到了`CursorLoader#loadInBackground()`方法。
 
-
-
-
-
 从上面的整个代码流程可以看到这个过程中使用两个层次的观察者模式：
 
 下面是注册观察者的时候的大致流程：
-![sequence](/media/files/2014/11/14/sequence_1.png)
+![sequence](/media/2014/11/14/sequence_1.png)
 
 下面是数据变化时通知更新流程图：
-![sequence_2](/media/files/2014/11/14/sequence_2.png)
+![sequence_2](/media/2014/11/14/sequence_2.png)
 
-整个过程大致如上所述，有两个层次的观察者模式的应用。从中我们可以看到目标可以不同，观察者相同，使观察者可以被复用，目标不用去关心观察者；观察者当然是要知道目标存在的，且能被目标动态地添加删除。
-
+整个过程大致如上所述，有两个层次的观察者模式的应用。
 
 <br/>
 参考：

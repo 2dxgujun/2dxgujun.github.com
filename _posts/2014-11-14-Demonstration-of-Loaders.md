@@ -1,26 +1,22 @@
 ---
 layout: post
-title: 节流装载器（Throttle Loaders）的使用示例
+title: Android装载器（Loaders）使用示例
 category: Android
 date: 2014-11-14
 ---
 
-> 1. [API概述](#anchor_1)<br/>
-> 2. [SQLite数据库的设计](#anchor_2)<br/>
-> 3. [实现Content provider](#anchor_3)<br/>
-> 4. [节流装载器的实现](#anchor_4)<br/>
-
-关于装载器的简介和一般使用方法，可以参考我的另外一篇文章：[Android装载器（Loaders）框架简介](/post/2014/11/14/Use-Loaders-in-Android.html)。
+关于装载器的简介，可以参考我的另外一篇文章：[Android装载器（Loaders）框架简介](/post/2014/11/14/Use-Loaders-in-Android.html)。
 
 本文主要围绕Android官方的ApiDemo中的LoaderThrottle.java从下到上展开一个完整的示例；包括实现一个简单的SQLite数据库保存数据，以及提供一个基于SQLite数据库的`ContentProvider`的实现，节流装载器的基本使用，以及利用AsyncTask模拟数据源发生变化来测试装载器的行为。
 
 <!-- more -->
 
-#<anchor id="anchor_1">API概述</anchor>
----
+# API概述
+
 由于本示例中使用了一些装载器框架之外的类和框架，下面简单介绍一下几个关键的类：
 
-##[Uri](https://developer.android.com/reference/android/net/Uri.html)
+### Uri
+
 URI即通用资源标识符（Universal Resource Identifier），URI代表要操作的数据，Android上可用的每种资源（包括图像，视频，音频资源等）都可以用URI来表示。
 就Android平台而言，URI主要分三个部分：**scheme、authority、path**；其中authority又分为host和port。
 
@@ -28,9 +24,9 @@ URI即通用资源标识符（Universal Resource Identifier），URI代表要操
 > scheme://host:port/path
 
 举个实际的例子：
-![uri](/media/files/2014/11/14/uri.png)
+![uri](/media/2014/11/14/uri.png)
 
-但是在Android中一般不直接使用URI来标识Content provider；正如我们通常见到的用常量来标识，例如，Android系统提供的Contacts provider，我们就用`Contacts.People.CONTENT_URI`来标识Contacts provider中的的People这个表。
+但是在Android中一般不直接使用URI字符串来标识Content provider；我们通常定义常量来标识，例如，Android系统提供的Contacts provider，我们就用`Contacts.People.CONTENT_URI`来标识Contacts provider中的的People这个表。
 
 那么要标识某个具体的人怎么办？
 
@@ -41,7 +37,8 @@ URI即通用资源标识符（Universal Resource Identifier），URI代表要操
 
 在本例中也将遵循这种URI的规范。
 
-##[UriMatcher](https://developer.android.com/reference/android/content/UriMatcher.html)
+### UriMatcher
+
 这是一个用来在Content provider中负责URI匹配的工具类。
 
 {% highlight java %}
@@ -71,7 +68,8 @@ sURIMatcher.addURI("contacts", "people/#/phones/#", PEOPLE_PHONES_ID);
 > content://contacts/people/4/phones<br/>
 > content://contacts/people/4/phones/1<br/>
 
-##[MIME Type](https://developer.android.com/guide/topics/providers/content-provider-basics.html#MIMETypeReference)
+### MIME Type
+
 MIME即多功能Internet邮件扩充服务（Multipurpose Internet Mail Extensions），它是一种多用途网际邮件扩充协议。
 MIME类型就是设定某种扩展名的文件用一种应用程序来打开的方式类型，当该扩展名文件被访问的时候，浏览器（Android系统）会自动使用指定应用程序来打开。
 
@@ -106,8 +104,8 @@ subtype通常由Content provider指定，Android内建的Content providers通常
 
 本例中的MIME类型也将遵照上面的规范。
 
-#<anchor id="anchor_2">SQLite数据库的设计</anchor>
----
+# SQLite数据库的设计
+
 首先定义数据库中唯一一张表的结构，本例中的`MainTable`继承自`BaseColums`，`BaseColums`中提供了两个默认的字段`_ID`和`_COUNT`作为表中的列名；在`MainTable`中还定义了其它一些成员。
 
 {% highlight java %}
@@ -156,8 +154,8 @@ static class DatabaseHelper extends SQLiteOpenHelper {
 }
 {% endhighlight %}
 
-#<anchor id="anchor_3">实现Content provider</anchor>
----
+# 实现 Content provider
+
 上面完成了SQLite数据库的设计，你还需要提供一种对数据库进行操作的方式，本例采用Content provider来实现对数据库的访问。
 
 在那个`MainTable`中还定义了一些访问数据时所使用的URI信息：
@@ -374,22 +372,22 @@ public static class SimpleProvider extends ContentProvider {
 
 那么上面的两句代码的作用就是实现当数据源发生改变之后，自动加载新数据的关键代码；具体到我们的`CursorLoader`中，就是当你对数据修改之后，`CursorLoader`会自动帮你加载新的数据，并调用`LoaderManager.LoaderCallbacks`中的`onLoadFinished()`传回最新的游标，你就可以更新界面等操作了。
 
-#<anchor id="anchor_4">节流装载器的实现</anchor>
----
+# 装载器实现代码
+
 {% highlight java %}
 public static class ThrottledLoaderListFragment extends ListFragment
 			implements LoaderManager.LoaderCallbacks<Cursor> {
     ...
-    
+
 	SimpleCursorAdapter mAdapter; // 显示装载器结果用的Adapter
-	
+
 	AsyncTask<Void, Void, Void> mPopulatingTask; // 用于填充数据库的异步任务
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
         ...
-        
+
         // 初始化装载器
 		getLoaderManager().initLoader(0, null, this);
 	}
@@ -479,13 +477,7 @@ public static class ThrottledLoaderListFragment extends ListFragment
 }
 {% endhighlight %}
 
-是不是感觉很坑，我的标题是节流装载器的使用示例，但是，但是...实现节流的代码就下面这么一行：
-
-> cl.setUpdateThrottle(2000);
-
-咱也不去翻它老人家的源码了，直接看注释就明白它干了什么，最后给大家留一句英文：
-
-> Set amount to throttle updates by. This is the minimum time from when the last loadInBackground() call has completed until a new load is scheduled.
+装载器初始化时，我们调用了`setUpdateThrottle(2000)`方法，这个方法的作用是设置装载器的节流更新周期，参数类型是毫秒。
 
 ╮(╯3╰)╭
 

@@ -6,7 +6,7 @@ paginate_path: page/:num
 
 blog:
     name:                                                JunGu
-    description:                                         Android developer, student
+    description:                                         Good good study, day day up
     title:                                               JunGu Blog
     url:                                                 http://2dxgujun.com/
     duoshuo:                                             2dxgujun
@@ -17,7 +17,7 @@ author:
     email:                                               2dxgujun@gmail.com
     weibo:                                               http://weibo.com/2dxgujun
     github:                                              https://github.com/2dxgujun
-    logo:                                                /media/avatar.jpg
+    logo:                                                /res/img/avatar.jpg
     douban:
         name:                                            db2dxgujun
         key:                                             0f93d5c81935559d2ebb81584ba000d7

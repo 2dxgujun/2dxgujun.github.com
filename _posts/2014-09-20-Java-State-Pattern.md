@@ -1,36 +1,33 @@
 ---
 layout: post
-title: Java状态模式（State）
-category: Design Pattern
+title: Java状态（State）模式
+category: Pattern
 date: 2014-09-20
 ---
 
-#定义
----
+# 定义
 允许一个对象在其内部状态改变时改变它的行为，对象看起来似乎修改了它的类。其别名为**状态对象（Objects for States）模式**；状态模式是一种对象行为型模式。
 
-#概述
----
+# 概述
 状态模式用于**解决系统中复杂对象的状态转换以及不同状态下行为的封装问题**。状态模式**将一个对象的状态从该对象中分离出来，封装到专门的状态类中**，使得对象状态可以灵活变化，对于客户端而言，无须关心对象状态的转换以及对象所处的当前状态，无论对于何种状态的对象，客户端都可以一致处理。
 
-#适用性
----
+<!-- more -->
+
+# 适用性
 以下情况可以考虑使用状态模式：
 
 1. 系统中某个对象存在多个状态，这些状态之间可以进行转换，并且对象在不同状态下行为不同。
 2. 对象的行为依赖于它的状态（如某些属性值），状态的改变将导致行为的变化。
 3. 在代码中包含大量与对象状态有关的条件语句，这些条件语句的出现，会导致代码的可维护性和灵活性变差，不能方便地增加和删除状态，并且导致客户类与类库之间的耦合增强。
 
-#结构
----
+# 结构
+
 在状态模式中引入了抽象状态类和具体状态类，它们是状态模式的核心，其结构如图1所示：
-![structure](/media/files/pattern/state/structure.png)
+![structure](/media/pattern/state/structure.png)
 <div align="center">图1 状态模式结构图</div>
 
-<!-- more -->
+# 角色
 
-#角色
----
 **Context（环境类）**
 环境类又称为上下文类，它是拥有多种状态的对象。由于在环境类的状态存在多样性且在不同的状态下对象的行为有所不同，因此将状态独立出去形成单独的状态类。在环境类中维护一个抽象状态类State的实例，这个实例定义当前状态，在具体实现时，它是一个State子类的对象。
 
@@ -40,12 +37,12 @@ date: 2014-09-20
 **ConcreteState（具体状态类）**
 它是抽象状态类的子类，每一个子类实现一个与环境类的一个状态相关的行为，每一个具体状态类对应环境类的一个具体状态，不同的具体状态类其行为有所不同。
 
-#协作
----
+# 协作
+
 在状态模式中，我们将对象在不同状态下的行为封装到不同的状态类中，为了让系统具有更好的灵活性和可扩展性，同时对个状态下的共有行为进行封装，我们需要对状态进行抽象，引入了抽象状态类角色，其典型代码如下所示：
 
 {% highlight java %}
-abstract class State {
+public abstract class State {
     // 声明抽象业务方法，不同的具体状态类可以不同的实现
     public abstract void handle();
 }
@@ -54,7 +51,7 @@ abstract class State {
 在抽象状态类的子类即具体状态类中实现了抽象状态类中声明的业务方法，不同的具体状态类可以提供完全不同的方法实现，在实际使用中，在一个状态类中可能包含多个业务方法，如果在具体状态类中某些业务方法的实现完全相同，可以将这些方法移至抽象状态类，实现代码的复用，典型的具体状态类代码如下所示：
 
 {% highlight java %}
-class ConcreteState extends State {
+public class ConcreteState extends State {
     public void handle() {
         // 方法具体实现代码
     }
@@ -64,7 +61,7 @@ class ConcreteState extends State {
 环境类维持一个对抽象状态类的引用，通过`setState()`方法可以向环境类注入不同的状态对象，再在环境类的业务方法中调用状态对象的方法，典型代码如下所示：
 
 {% highlight java %}
-class Context {
+public class Context {
     private State state; // 维持一个对抽象状态对象的引用
     private int value; // 其他属性值，该属性值的变化可能会导致对象状态发生变化
 
@@ -83,8 +80,8 @@ class Context {
 
 环境类实际上是真正拥有状态的对象，我们只是将环境类中与状态有关的代码提取出来封装到专门的状态类中。在状态模式结构图中，环境类`Context`与抽象状态类`State`之间存在单向关联关系，在`Context`中定义了一个`State`对象。在实际使用中，它们之间可能存在更为复杂的关系，`State`与`Context`之间可能也存在依赖或者关联关系。
 
-#效果
----
+# 效果
+
 状态模式的主要优点如下：
 
 - **封装了状态的转换规则**；在状态模式中可以将状态的转换代码封装在环境类或者具体状态类中，可以对状态转换代码进行集中管理，而不是分散在一个个业务方法中。
@@ -96,8 +93,8 @@ class Context {
 
 - **状态模式对“开闭原则”支持并不太好**；增加新的状态类需要修改那些负责状态转换的源代码，否则无法转换到新增状态；而且修改某个状态类的行为也需要修改对应类的源代码。
 
-#实现
----
+# 实现
+
 在状态模式的使用过程中，一个对象的状态之间还可以进行相互转换，通常有两种实现状态转换的方式：
 ##一、统一由环境类来负责状态之间的转换
 此时，环境类还充当了**状态管理器（State Manager）**角色，在环境类的业务方法中通过对某些属性值的判断实现状态转换，还可以提供一个专门的方法用于实现属性判断的状态转换，如下代码片段所示：
@@ -113,7 +110,8 @@ public void changeState() {
 }
 {% endhighlight %}
 
-##二、由具体状态类来负责状态之间的转换
+## 二、由具体状态类来负责状态之间的转换
+
 可以在具体状态类的业务方法中判断环境类的某些属性值再根据情况为环境类设置新的状态对象，实现状态转换。此时，状态类与环境类之间就将存在依赖或关联关系，因为状态类需要访问环境类中的属性值，如下代码片段所示：
 
 {% highlight java %}
@@ -128,8 +126,8 @@ public void changeState(Context context) {
 {% endhighlight %}
 
 
-#实例：银行系统中的账户类的设计
----
+# 实例：银行系统中的账户类的设计
+
 > Sunny软件公司欲为某银行开发一套信用卡业务系统，银行账户(Account)是该系统的核心类之一，通过分析，Sunny软件公司开发人员发现在该系统中，账户存在三种状态，且在不同状态下账户存在不同的行为，具体说明如下：
 > 
 > 1. 如果账户中余额大于等于0，则账户的状态为正常状态(Normal State)，此时用户既可以向该账户存款也可以从该账户取款；
@@ -138,7 +136,7 @@ public void changeState(Context context) {
 > 4. 根据余额的不同，以上三种状态可发生相互转换。
 
 Sunny软件公司开发人员对银行账户类进行分析，绘制了如图2所示UML状态图：
-![bank_account_activity](/media/files/pattern/state/bank_account_activity.png)
+![bank_account_activity](/media/pattern/state/bank_account_activity.png)
 <div align="center">图2 银行账户状态图</div>
 
 在图2中，`NormalState`表示正常状态，`OverdraftState`表示透支状态，`RestrictedState`表示受限状态，在这三种状态下账户对象拥有不同的行为，方法`deposit()`用于存款，`withdraw()`用于取款，`computeInterest()`用于计算利息，`stateCheck()`用于在每一次执行存款和取款操作后根据余额来判断是否要进行状态转换并实现状态转换，相同的方法在不同的状态中可能会有不同的实现。为了实现不同状态下对象的各种行为以及对象状态之间的相互转换，Sunny软件公司开发人员设计了一个较为庞大的账户类`Account`，其中部分代码如下所示：
@@ -202,26 +200,26 @@ class Account {
 
 Sunny软件公司开发人员使用状态模式来解决账户状态的转换问题，客户端只需要执行简单的存款和取款操作，系统根据余额将自动转换到相应的状态，其基本结构如图3所示：
 
-![bank_account](/media/files/pattern/state/bank_account.png)
+![bank_account](/media/pattern/state/bank_account.png)
 <div align="center">图3 银行账户结构图</div>
 
 在图3中，`Account`充当环境类角色，`AccountState`充当抽象状态角色，`NormalState`、`OverdraftState`和`RestrictedState`充当具体状态角色。
 参考代码托管在Github：[Bank Account](https://github.com/2dxgujun/java-design-patterns/tree/master/src/behavioral/state/bankaccount)
 
-#实例：开关类的设计（共享状态）
----
+# 实例：开关类的设计
+
 在有些情况下，多个环境对象可能需要共享同一个状态，如果希望在系统中实现多个环境对象共享一个或多个状态对象，那么需要**将这些状态对象定义为环境类的静态成员对象**。
 
 > 如果某系统要求两个开关对象要么都处于开的状态，要么都处于关的状态，在使用时它们的状态必须保持一致，开关可以由开转换到关，也可以由关转换到开。
 
 可以使用状态模式来实现开关的设计，其结构如图4所示：
-![switch](/media/files/pattern/state/switch.png)
+![switch](/media/pattern/state/switch.png)
 <div align="center">图4 开关及其状态设计结构图</div>
 
 参考代码托管在Github：[Switch](https://github.com/2dxgujun/java-design-patterns/tree/master/src/behavioral/state/switch1)
 
-#实例：屏幕放大镜工具（由环境类来实现状态转换）
----
+# 实例：屏幕放大镜工具的设计
+
 在状态模式中实现状态转换时，**具体状态类可通过调用环境类`Context`的`setState()`方法进行状态的转换操作，也可以统一由环境类`Context`来实现状态的转换**。此时，增加新的具体状态类可能需要修改其他具体状态类或者环境类的源代码，否则系统无法转换到新增状态。但是对于客户端来说，无须关心状态类，可以为环境类设置默认的状态类，而将状态的转换工作交给具体状态类或环境类来完成，具体的转换细节对于客户端而言是透明的。
 
 在上面的“银行账户状态转换”实例中，我们通过具体状态类来实现状态的转换，在每一个具体状态类中都包含一个`stateCheck()`方法，在该方法内部实现状态的转换，除此之外，我们还可以通过环境类来实现状态转换，**环境类作为一个状态管理器，统一实现各种状态之间的转换操作**。
@@ -232,11 +230,10 @@ Sunny软件公司开发人员使用状态模式来解决账户状态的转换问
 
 可以考虑使用状态模式来设计该屏幕放大镜工具，我们定义三个屏幕状态类`NormalState`、`LargerState`和`LargestState`来对应屏幕的三种状态，分别是正常状态、二倍放大状态和四倍放大状态，屏幕类`Screen`充当环境类，其结构如图5所示：
 
-![screen](/media/files/pattern/state/screen.png)
+![screen](/media/pattern/state/screen.png)
 <div align="center">图5 屏幕放大镜工具结构图</div>
 
 参考代码托管在Github：[Screen](https://github.com/2dxgujun/java-design-patterns/tree/master/src/behavioral/state/screen)
-
 
 <br/>
 参考：
@@ -244,4 +241,4 @@ Sunny软件公司开发人员使用状态模式来解决账户状态的转换问
 1. [史上最强设计模式导学目录](http://blog.csdn.net/lovelion/article/details/17517213)
 2. 《设计模式——可复用面向对象软件的基础》
 
-本文出自[2dxgujun](http://github.com/2dxgujun)，转载时请注明出处及相应链接。
+本文出自[2dxgujun](/)，转载时请注明出处及相应链接。

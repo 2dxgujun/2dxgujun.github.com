@@ -6,4 +6,4 @@ Fork from [Jekyll-Light](https://github.com/2dxgujun/Jekyll-Light)
 
 Feel free to fork, just please keep the link:)
 
-![](media/jekyll.png)
+![](res/img/jekyll.png)
