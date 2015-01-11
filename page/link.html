@@ -6,6 +6,6 @@ title: Link
 <link rel="stylesheet" href="/res/css/page.css">
 <h1 class="flink">友情链接</h1>
 
-<h2 class="flink">大学</h2>
-<a class="flink-item" href="http://www.yee4.com/" target="_Blank">安卓杂谈网</a>——刘宇霆学长的编程、创业、生活记录小站<br/>
-<a class="flink-item" href="http://www.itxuye.com/" target="_Blank">ITXuye</a>——徐野同学的个人博客<br/>
+{% for link in site.data.link %}
+<a class="category-sub-title" href="{{ link.href }}" target="_blank" >{{ link.title }}</a>
+{% endfor %}
