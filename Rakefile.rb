@@ -88,3 +88,10 @@ task :page do
     post.puts "---"
   end
 end
+
+#Usage: rake deploy message="Message"
+desc "Publishing the website via git"
+task :deploy do
+  message = ENV["message"] || "Empty Message"
+  system "git commit -m \"#{message}\""
+end
