@@ -5,11 +5,11 @@ category: Other
 date: 2015-01-12
 ---
 
-我之前一直使用[Github Pages](https://pages.github.com/)和[Jekyll](http://jekyllrb.com/)来搭建个人博客，但是不久前GFW好像加强了，Github虽然能访问但是会出现丢包现象，博客的访问速度明显不如从前，经常10多秒都打不开。之前没太在意，昨天同学说他把博客放在了[GitCafe](https://gitcafe.com/)上，访问速度要比Github快很多。
-
-<!-- more -->
+我之前一直使用[Github Pages](https://pages.github.com/)和[Jekyll](http://jekyllrb.com/)来搭建个人博客，但是不久前GFW好像加强了，强烈鄙视之；Github虽然能访问但是会出现丢包现象，博客的访问速度明显不如从前，经常10多秒都打不开。前段时间没太在意，昨天同学说他把博客放在了[GitCafe](https://gitcafe.com/)上，访问速度要比Github快很多。
 
 可能有些人因为Github用得久了不想迁移博客，其实你不必非此即彼，Github和GitCafe可以同时使用。具体做法就是国外访客解析到Github，国内访客解析到GitCafe。
+
+<!-- more -->
 
 我用的是万网的域名控制台做的解析，万网可以设置海外解析线路和默认解析线路：
 
@@ -21,7 +21,7 @@ date: 2015-01-12
 
 ![Custom Domain](/media/2015/1/12/domain.png)
 
-项目创建完后，我们需要将原本提交到Github上的博客内容同步提交到GitCafe上。
+域名设置完后，我们需要将原本提交到Github上的博客内容同步提交到GitCafe上。
 
 ### 设置 Remote 源
 
@@ -48,6 +48,7 @@ end
 因为家里比较偏远有些延迟，但是GitCafe还是要比Github的速度快了近一倍。
 
 ![Ping Github](/media/2015/1/12/ping_github.png)
+ 
 ![Ping GitCafe](/media/2015/1/12/ping_gitcafe.png)
 
 <br/>

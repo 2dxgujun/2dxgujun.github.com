@@ -94,9 +94,9 @@ desc "Publishing the website via git"
 task :deploy do
   message = ENV["message"] || "Empty Message"
   system "git commit -m \"#{message}\""
-  system "git push github master"
   puts "Publishing to Github"
-  system "git push gitcafe master:gitcafe-pages"
+  system "git push github master"
   puts "Publishing to GitCafe"
+  system "git push gitcafe master:gitcafe-pages"
   puts "Your website is now published"
 end
