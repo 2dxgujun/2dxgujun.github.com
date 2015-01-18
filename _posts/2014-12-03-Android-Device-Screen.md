@@ -1,6 +1,6 @@
 ---
 layout: post
-title: UI设计师不可不知的安卓屏幕知识
+title: 【转】UI设计师不可不知的安卓屏幕知识
 category: Android
 date: 2014-12-03
 ---
