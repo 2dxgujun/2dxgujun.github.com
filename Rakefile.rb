@@ -50,6 +50,9 @@ task :post do
     post.puts "category: "
     post.puts "date: #{date}"
     post.puts "---"
+    post.puts "\n"
+    post.puts "<br/>"
+    post.puts "本文出自[2dxgujun](/)，转载时请注明出处及相应链接。"
   end
 end
 
