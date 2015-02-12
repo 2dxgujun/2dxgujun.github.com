@@ -7,7 +7,7 @@ paginate_path: page/:num
 blog:
     name:                                                JunGu
     description:                                         Good good study, day day up
-    title:                                               JunGu Blog
+    title:                                               Jun Gu
     url:                                                 http://2dxgujun.com/
     duoshuo:                                             2dxgujun
     tongji:                                              2dxgujun
