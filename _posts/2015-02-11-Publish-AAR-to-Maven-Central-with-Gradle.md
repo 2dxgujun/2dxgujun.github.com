@@ -52,7 +52,6 @@ Copyright (C) 2013 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 ```
 
-
 ### 生成密钥
 
 ```
@@ -391,7 +390,7 @@ Uploaded 0K
 
 部署完成之后，上传的组件会存储在一个独立的临时staging repository，在正式发布之前如果你在测试时遇到任何问题，都可以删除这个staging repository，在修复之后重新部署。正式发布才会同步到maven central repository。
 
-通常情况下正式发布这个操作是手动完成的。
+通常情况下正式发布操作需要手动完成。
 
 首先打开[Sonatype Nexus Professional](https://oss.sonatype.org/)登录，打开*Staging Repositories*列表，筛选出之前部署的repository。
 
@@ -407,29 +406,7 @@ Uploaded 0K
 
 **注意：**如果你是第一次发布，需要到之前创建的JIRA ticket评论一下，告诉他们你已经release了，需要同步下。
 
-
-## 依赖项
-
-正式发布之后就可以在项目中添加依赖项，使用之前发布的库了
-
-### Gradle
-
-{% highlight groovy %}
-dependencies {
-    compile 'me.gujun.android.taggroup:library:1.0@aar'
-}
-{% endhighlight %}
-
-### Maven
-
-{% highlight xml %}
-<dependency>
-    <groupId>me.gujun.android.taggroup</groupId>
-    <artifactId>library</artifactId>
-    <version>1.0</version>
-    <type>apklib</type>
-</dependency>
-{% endhighlight %}
+Gradle文件的配置可以参考我的项目：[AndroidTagGroup](https://github.com/2dxgujun/AndroidTagGroup)
 
 
 ## 遇到问题
