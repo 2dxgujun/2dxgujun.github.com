@@ -408,6 +408,10 @@ Uploaded 0K
 
 Gradle文件的配置可以参考我的项目：[AndroidTagGroup](https://github.com/2dxgujun/AndroidTagGroup)
 
+我的JIRA ticket：[OSSRH-13721](https://issues.sonatype.org/browse/OSSRH-13721)
+
+![JIRA ticket](/media/2015/02/11/jira_ticket.png)
+
 
 ## 遇到问题
 
