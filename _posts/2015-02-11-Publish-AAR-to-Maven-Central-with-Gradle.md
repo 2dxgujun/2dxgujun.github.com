@@ -3,8 +3,6 @@ layout: post
 title: Android Studio使用Gradle上传AAR至Maven
 categories:
 - Android
-- Gradle
-- 开源
 date: 2015-02-11
 ---
 

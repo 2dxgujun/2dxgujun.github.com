@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hello Git Blog
-category: Diary
+category: Life
 date: 2014-08-13
 ---
 

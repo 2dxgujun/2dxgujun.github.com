@@ -6,7 +6,7 @@ paginate_path: page/:num
 
 blog:
     name:                                                JunGu
-    description:                                         Good good study, day day up
+    description:                                         给岁月以文明，给时光以生命
     title:                                               Jun Gu
     url:                                                 http://2dxgujun.com/
     duoshuo:                                             2dxgujun

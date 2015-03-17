@@ -3,7 +3,6 @@ layout: post
 title: 开源第一弹，Android标签组
 categories: 
 - Android
-- Android自定义控件
 date: 2015-02-07
 ---
 
