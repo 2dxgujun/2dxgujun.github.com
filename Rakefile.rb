@@ -92,11 +92,9 @@ task :page do
   end
 end
 
-#Usage: rake deploy message="Message"
+#Usage: rake deploy
 desc "Publishing the website via git"
 task :deploy do
-  message = ENV["message"] || "Empty Message"
-  system "git commit -m \"#{message}\""
   puts "Publish to Github..."
   system "git push github master"
   puts "Publish to GitCafe..."
