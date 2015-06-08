@@ -24,7 +24,7 @@ URI即通用资源标识符（Universal Resource Identifier），URI代表要操
 > scheme://host:port/path
 
 举个实际的例子：
-![uri](/media/2014/11/14/uri.png)
+![uri](http://ww1.sinaimg.cn/large/bce2dea9jw1esvuv82os2j20as02bmxm.jpg)
 
 但是在Android中一般不直接使用URI字符串来标识Content provider；我们通常定义常量来标识，例如，Android系统提供的Contacts provider，我们就用`Contacts.People.CONTENT_URI`来标识Contacts provider中的的People这个表。
 

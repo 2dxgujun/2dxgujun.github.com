@@ -36,25 +36,25 @@ date: 2014-10-01
 
 
 Android Studio新建的工程从一开始就已经支持测试了（我的Android Studio版本：0.8.9）；新建的Android工程目录结构如下：
-![project_structure](/media/2014/10/01/p1_project_structure.png)
+![project_structure](http://ww2.sinaimg.cn/large/bce2dea9jw1esvuplis8aj209v0a5t9v.jpg)
 
 注意到`src/`目录下面有两个子目录`androidTest/`和`main/`，其中`main/`目录就是工程代码和资源文件放置的地方；而`androidTest/`目录就是测试代码应该放置的地方；可以看到测试目录里面已经有一个`ApplicationTest`类了。
 
 在运行测试之前还需需要进行一些简单的配置：
 
 点击Android Studio工具栏上“运行”按钮旁的运行配置下拉框，打开如下菜单：
-![edit_configuration](/media/2014/10/01/p1_edit_configuration.png)
+![edit_configuration](http://ww4.sinaimg.cn/large/bce2dea9jw1esvuosz0nzj205g02daa7.jpg)
 
 点击`Edit Configurations...`打开配置对话框之后，点击左上角的+号，选择`Android Tests`；在右边出现的面板上稍作配置：
-![test_app_configuration](/media/2014/10/01/p1_test_app_configuration.png)
+![test_app_configuration](http://ww2.sinaimg.cn/large/bce2dea9jw1esvuouulioj20kw0be40h.jpg)
 
 OK，切换运行模式到`test-app`模式，接下来就可以运行测试了。
 
 运行中会弹出下面的工具窗口：
-![test_app_run1](/media/2014/10/01/p1_test_app_run1.png)
+![test_app_run1](http://ww3.sinaimg.cn/large/bce2dea9jw1esvuovj5u5j210s08hwhs.jpg)
 
 这个窗口显示测试运行的各种状况，最右侧的窗口显示的就是那个`ApplicationTest`测试用例运行情况，其中包括运行花费的时间和测试方法的运行状况；`P:2`表示有两个方法通过了测试，双击即可查看具体测试通过的方法：
-![test_app_run2](/media/2014/10/01/p1_test_app_run2.png)
+![test_app_run2](http://ww1.sinaimg.cn/large/bce2dea9jw1esvuou6h9vj20df028wex.jpg)
 
 这两个测试方法分别位于`ApplicationTestCase`和`AndroidTestCase`类；它们是Android测试框架进行的初始化测试。
 
@@ -72,12 +72,12 @@ OK，切换运行模式到`test-app`模式，接下来就可以运行测试了�
 如上一章介绍的，在Android Studio中，工程中`/src`目录下直接有一个`androidTest/`目录，这就是工程模版为你创建的用于放置测试用例的目录，里面的结构和应用代码路径`main/`中的一样；**你创建的测试用例应该放置在被测试应用代码相同的包内，不过一个是在`andoidTest/`目录，一个在`main/`目录（通常情况下，应用中的`Activity`都位于一个单独的包，所以无须再为你的`Activity`测试用例单独建一个包）；同时，测试用例名也应遵循你要测试的Java或Android类的相同名称，但后缀为“Test”**。
 
 得力于我们强大的Android Studio:)我们可以方便地使用一个命令为我们的类建立测试用例，并且无须关心包和命名的问题；比如你想为`MyActivity`创建一个测试用例，打开`MyActivity`，然后右击编辑区，在弹出的上下文菜单中选择Go To - Test（Ctrl + Shift + T），你就可以打开一个新建测试用例的对话框：
-![go_to_test](/media/2014/10/01/p2_go_to_test.png)
+![go_to_test](http://ww4.sinaimg.cn/large/bce2dea9jw1esvurhit9yj20kx0cogon.jpg)
 
 一般来说，你只需要修改那个Superclass（使用Android提供的测试框架），再选择是否生成一些测试方法。
 
 OK之后，出现一个对话框叫你选择测试用例目录：
-![choose_destination](/media/2014/10/01/p2_choose_destination.png)
+![choose_destination](http://ww4.sinaimg.cn/large/bce2dea9jw1esvurhit9yj20kx0cogon.jpg)
 选择`androidTest/`目录（最后一条）。
 
 OK，这样就在对应的测试用例目录中新建了一个测试用例`MyActivityTest`。
@@ -181,13 +181,13 @@ public void testMyFirstTestTextView_labelText() {
 ## 构建和运行你的测试
 
 注意到我写了很多个测试用例，但是现在我只想运行其中一个测试用例，该怎么办？
-![multi_test_case](/media/2014/10/01/p2_multi_test_case.png)
+![multi_test_case](http://ww4.sinaimg.cn/large/bce2dea9jw1esvurtjnx0j20980a0q45.jpg)
 
 So Easy...参照之前建立测试环境中的内容，打开运行配置，配置成仅对一个`Activity`进行测试：
-![run_one_testcase](/media/2014/10/01/p2_run_one_testcase.png)
+![run_one_testcase](http://ww1.sinaimg.cn/large/bce2dea9jw1esvurilpt9j20kf0awmzf.jpg)
 
 可以看到测试用例通过测试，没有任何错误：
-![test_app_run3](/media/2014/10/01/p2_test_app_run.png)
+![test_app_run3](http://ww3.sinaimg.cn/large/bce2dea9jw1esvurjpu80j210r0aitcg.jpg)
 
 
 <a id="anchor_3"></a>
@@ -199,7 +199,6 @@ So Easy...参照之前建立测试环境中的内容，打开运行配置，配�
 
 UI测试的另一种类型是黑盒测试，就是那种你无法得到应用程序源码的测试方法。这种类型的测试可以用来测试你的应用程序是如何和其它应用程序或与系统进行交互的。本节不包括黑盒测试，想要了解更多关于如何在你的Android应用程序中进行黑盒测试，请参看[UI Testing guide](http://developer.android.com/tools/testing/testing_ui.html)。
 
-完整的测试用例代码，请参考实例工程[AndroidTestingFun](/media/2014/10/01/AndroidTestingFun.zip)中的ClickFunActivityTest.java。
 
 ##使用Instrumentation框架创建一个UI测试用例
 

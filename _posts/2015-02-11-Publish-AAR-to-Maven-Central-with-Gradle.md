@@ -1,8 +1,7 @@
 ---
 layout: post
 title: Android Studio使用Gradle上传AAR至Maven
-categories:
-- Android
+categories: Android
 date: 2015-02-11
 ---
 
@@ -381,7 +380,7 @@ Uploaded 0K
 
 部署时创建的repository会根据部署项目的groupId来命名，例如我的groupId为me.gujun，那么我的repository即为megujun-xxxx，后面的xxxx为4个数字，初次部署为1000，后面每次部署这个数字都会+1。选择这个repository，列表下面的面板会显示一些详细信息。
 
-![OSS Sonatype](/media/2015/02/11/oss_sonatype.png)
+![OSS Sonatype](http://ww3.sinaimg.cn/large/bce2dea9jw1esvvb7jyyxj20nu0bvn23.jpg)
 
 
 ## 正式发布
@@ -400,7 +399,7 @@ Uploaded 0K
 
 成功close之后，可以点击*Release*按钮正式发布repository，组件会被移动到OSSRH的release repository，这个仓库会同步到maven central repository。
 
-![Promote Release](/media/2015/02/11/promote_release.png)
+![Promote Release](http://ww4.sinaimg.cn/large/bce2dea9jw1esvvb5z75ij20b4082mxv.jpg)
 
 **注意：**如果你是第一次发布，需要到之前创建的JIRA ticket评论一下，告诉他们你已经release了，需要同步下。
 
@@ -408,7 +407,7 @@ Gradle文件的配置可以参考我的项目：[AndroidTagGroup](https://github
 
 我的JIRA ticket：[OSSRH-13721](https://issues.sonatype.org/browse/OSSRH-13721)
 
-![JIRA ticket](/media/2015/02/11/jira_ticket.png)
+![JIRA ticket](http://ww3.sinaimg.cn/large/bce2dea9jw1esvvb7jyyxj20nu0bvn23.jpg)
 
 
 ## 遇到问题

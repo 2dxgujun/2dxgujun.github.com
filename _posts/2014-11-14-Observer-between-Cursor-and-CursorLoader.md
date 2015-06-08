@@ -103,7 +103,7 @@ public void notifyChange(Uri uri, ContentObserver observer, boolean syncToNetwor
 到此，这个观察者模式已经水落石出了！在`ContentProvider#query()`方法的最后注册的观察者，在`insert()、delete()、update()`方法的最后被通知；这样就实现了当数据发生改变时发送通知更新数据。
 
 下面这张图大概描述了这个观察者的框架：
-![framework_1](/media/2014/11/14/framework_1.png)
+![framework_1](http://ww3.sinaimg.cn/large/bce2dea9jw1esvuwdwftwj20m80j640e.jpg)
 
 下面我们就要来看看这个观察者被通知后做了什么工作。
 
@@ -219,7 +219,7 @@ public Cursor loadInBackground() {
 到此，第二个观察者模式也已经水落石出了！在`CursorLoader#loadInBackground()`方法中注册的观察者，在第一个观察者接收到通知后接着被通知；这样当数据发生改变时这个通知就传递到了真正干活的兄弟身上。
 
 下面这张图大概描述了这个观察者的框架：
-![framework_2](/media/2014/11/14/framework_2.png)
+![framework_2](http://ww1.sinaimg.cn/large/bce2dea9jw1esvuwd8s1nj20m80le0vs.jpg)
 
 下面我们就要来看看这个观察者里做了什么工作。
 
@@ -247,10 +247,10 @@ public final class ForceLoadContentObserver extends ContentObserver {
 从上面的整个代码流程可以看到这个过程中使用两个层次的观察者模式：
 
 下面是注册观察者的时候的大致流程：
-![sequence](/media/2014/11/14/sequence_1.png)
+![sequence](http://ww4.sinaimg.cn/large/bce2dea9jw1esvuwcdmg3j20ua0kk770.jpg)
 
 下面是数据变化时通知更新流程图：
-![sequence_2](/media/2014/11/14/sequence_2.png)
+![sequence_2](http://ww4.sinaimg.cn/large/bce2dea9jw1esvuwcdmg3j20ua0kk770.jpg)
 
 整个过程大致如上所述，有两个层次的观察者模式的应用。
 

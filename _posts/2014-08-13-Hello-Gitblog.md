@@ -5,7 +5,6 @@ category: Life
 date: 2014-08-13
 ---
 
-
 ![Jekyll](/res/img/jekyll.png)
 今天2014年8月13日，我的Github博客搭建完成了，纪念一下。
 

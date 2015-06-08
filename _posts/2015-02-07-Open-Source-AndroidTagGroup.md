@@ -1,8 +1,7 @@
 ---
 layout: post
 title: 开源第一弹，Android标签组
-categories: 
-- Android
+categories: Android
 date: 2015-02-07
 ---
 
@@ -13,13 +12,13 @@ date: 2015-02-07
 <!-- more -->
 
 内置有三种型号和五种颜色主题，也可以自定义大小和颜色。
-![screenshot_1](/media/2015/02/07/screenshot_1.png)
+![screenshot_1](http://ww3.sinaimg.cn/large/bce2dea9jw1esvvaeywgdj20dw0fo0tt.jpg)
 
 点击添加标签既可输入新的标签，点击空白处或者按回车键结束输入。
-![screenshot_2](/media/2015/02/07/screenshot_2.png)
+![screenshot_2](http://ww1.sinaimg.cn/large/bce2dea9jw1esvvaea8hsj20dw07cq39.jpg)
 
 双击删除标签，输入两次backspace删除离输入框最近的标签。
-![screenshot_3](/media/2015/02/07/screenshot_3.png)
+![screenshot_3](http://ww1.sinaimg.cn/large/bce2dea9jw1esvvafnuuvj20dw07egly.jpg)
 
 你可以用它来作用户标签，或者归类文章和图书的标签...
 

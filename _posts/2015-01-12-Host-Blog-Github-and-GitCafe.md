@@ -13,13 +13,13 @@ date: 2015-01-12
 
 我用的是万网的域名控制台做的解析，万网可以设置海外解析线路和默认解析线路：
 
-![DNS](/media/2015/01/12/dns.png)
+![DNS](http://ww3.sinaimg.cn/large/bce2dea9jw1esvv8kiqt2j20ue05ldh4.jpg)
 
 把海外IP解析到Github的A记录地址，默认线路解析到GitCafe的A记录地址。
 
 解析设置完毕之后，在GitCafe上新建自己的博客项目，具体做法可以参考[GitCafe Pages的官方搭建教程](http://blog.gitcafe.com/?p=116)。新建完之后，进入项目管理页的域名管理，我们可以找到相应的设置项，如下所示：
 
-![Custom Domain](/media/2015/01/12/domain.png)
+![Custom Domain](http://ww1.sinaimg.cn/large/bce2dea9jw1esvv8c9qfqj20bk06ywev.jpg)
 
 域名设置完后，我们需要将原本提交到Github上的博客内容同步提交到GitCafe上。
 
@@ -47,9 +47,9 @@ end
 
 因为家里比较偏远有些延迟，但是GitCafe还是要比Github的速度快了近一倍。
 
-![Ping Github](/media/2015/01/12/ping_github.png)
+![Ping Github](http://ww4.sinaimg.cn/large/bce2dea9jw1esvv8dazsoj20g205i3zo.jpg)
  
-![Ping GitCafe](/media/2015/01/12/ping_gitcafe.png)
+![Ping GitCafe](http://ww1.sinaimg.cn/large/bce2dea9jw1esvv8bes85j20fv05k3zl.jpg)
 
 <br/>
 本文出自[2dxgujun](/)，转载时请注明出处及相应链接。

@@ -23,15 +23,15 @@ Hierarchy Viewer会让你选择设备或者模拟器上正在运行的进程，�
 
 比如，下图是`ListView`中的一个列表项的Layout。它的左边是一个位图，右边是两个层叠的文字；像这种需要被多次inflate的Layout，优化它们会有事半功倍的效果。
 
-![layout_listitem](/media/2014/09/27/layout_listitem.png)
+![layout_listitem](http://ww4.sinaimg.cn/large/bce2dea9jw1esvui0akz4j208w01sq2s.jpg)
 
 hierarchyviewer这个工具在`<sdk>/tools/`中；当打开时，它显示一张可使用设备的列表，和它正在运行的组件。选中你要查看的组件；点击Load View Hierarchy来查看所选组件的层级。比如，下图就是前一个图中所示Layout的层级关系。
 
-![hierarchy_linearlayout](/media/2014/09/27/hierarchy_linearlayout.png)
+![hierarchy_linearlayout](http://ww3.sinaimg.cn/large/bce2dea9jw1esvui1ko1jj20ci06jaai.jpg)
 
 这张图中，你可以看到一个三层结构，其中布置在右下角的`TextView`三个交通灯都是黄色的表示它的存在一些布局缺陷；点击其中的项就会显示每个步骤所花费的时间。这样，谁花了多长时间在什么步骤上，就清晰可见了。
 
-![hierarchy_layouttimes](/media/2014/09/27/hierarchy_layouttimes.png)
+![hierarchy_layouttimes](http://ww1.sinaimg.cn/large/bce2dea9jw1esvukfd6o9j204606vglp.jpg)
 
 可以看到，渲染一个完整的列表项的时间就是：
 
@@ -69,17 +69,17 @@ Hierarchy Viewer在连接手机时，手机会启动View Server与其进行Socke
 
 首先去Github Download下来，使用Android Studio打开这个工程，可能需要一些配置（如Gradle版本的配置）；
 完成之后运行`viewserver-sample`这个Module，启动之后，会打开一个Activity，如下
-![activity_screenshot](/media/2014/09/27/activity_screenshot.png)
+![activity_screenshot](http://ww3.sinaimg.cn/large/bce2dea9jw1esvulgnkjtj208c0et74q.jpg)
 
 之后使用前面介绍的方法，运行`hierarchyviewer`工具，在视图中能看到设备下面出现了一个组件，选中之后，点击`Load View Hierarchy`就能显示组件的层级了。
 
-![hierarchy_viewer_screenshot](/media/2014/09/27/hierarchy_viewer_screenshot.png)
+![hierarchy_viewer_screenshot](http://ww2.sinaimg.cn/large/bce2dea9jw1esvui0vo1nj20m80cn412.jpg)
 
 ## 修正Layout
 
 因为上面的Layout性能太慢，原因在这个嵌套的`LinearLayout`，解决的办法可能是将Layout层级变浅变宽，而不是又窄又深。`RelativeLayout`作为根节点时就可以达到目的。所以，当换成基于`RelativeLayout`的布局时，你的Layout变成了两层。新的Layout长成这样：
 
-![hierarchy_relativelayout](/media/2014/09/27/hierarchy_relativelayout.png)
+![hierarchy_relativelayout](http://ww2.sinaimg.cn/large/bce2dea9jw1esvukgp7taj20aj08ct9b.jpg)
 
 现在渲染列表项的时间：
 
