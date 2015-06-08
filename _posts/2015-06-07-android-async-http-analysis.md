@@ -7,7 +7,7 @@ category:
 date: 2015-06-07
 ---
 
-[android-async-http](https://github.com/loopj/android-async-http)是一个为Android量身定制的异步HTTP请求框架，它基于Apache的[HttpClient](http://hc.apache.org/httpcomponents-client-ga/)开发。本文分析的版本为v1.4.6。
+[android-async-http](https://github.com/loopj/android-async-http)是一个为Android量身定制的异步HTTP请求框架，它基于Apache的[HttpClient](http://hc.apache.org/httpcomponents-client-ga/)开发。本文针对v1.4.6版本进行分析。
 
 <!-- more -->
 

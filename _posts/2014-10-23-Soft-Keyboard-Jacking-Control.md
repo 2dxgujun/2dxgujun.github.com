@@ -6,12 +6,12 @@ date: 2014-10-23
 ---
 
 昨天在设计一个页面，大概框图如下：
-![sample](/media/2014/10/23/sample.png)
+![sample](http://ww2.sinaimg.cn/large/bce2dea9jw1eswqjyrqx6j207a0bmweo.jpg)
 
 <!-- more -->
 
 顶部有一个原生的`ActionBar`和一个自定义的`ActionBar`，然后中间一段内容，最下面有一个`EditText`；当`EditText`获取焦点时，会弹出软键盘：
-![soft_keyboard_pop](/media/2014/10/23/soft_keyboard_pop.png)
+![soft_keyboard_pop](http://ww3.sinaimg.cn/large/bce2dea9jw1eswqjzhcupj20790cw0ti.jpg)
 注意到顶部的原生`ActionBar`和我自定义的`ActionBar`被软键盘给顶出去了...我想要的效果是，顶部的两个`ActionBar`保持不动，然后下面的Content被顶上去，同时被`ActionBar`覆盖掉顶上去的那部分。
 
 网上有一种解决方法说是给`Activity`设置`android:windowSoftInputMode="adjustPan"`，我试过，不管用。
@@ -23,7 +23,7 @@ date: 2014-10-23
 # 解决方法
 
 解决问题的关键就在于`ScrollView`：给想要被顶上去的内容（包括下面那个`EditText`）嵌套一个`ScrollView`：
-![scrollview_nested](/media/2014/10/23/scrollview_nested.png)
+![scrollview_nested](http://ww2.sinaimg.cn/large/bce2dea9jw1eswqk2ohguj207a0bmjrp.jpg)
 
 图中红色的框就是`ScrollView`应该在页面中所处的位置。
 

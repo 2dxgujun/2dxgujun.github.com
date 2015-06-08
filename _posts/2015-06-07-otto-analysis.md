@@ -7,7 +7,7 @@ category:
 date: 2015-06-07
 ---
 
-[otto](http://square.github.io/otto/)是[Square](http://square.github.io/)公司出品的一个发布-订阅模式框架，它基于Google [Guava](https://github.com/google/guava)项目中的event bus模块开发，针对Android平台做了优化和加强。
+[otto](http://square.github.io/otto/)是[Square](http://square.github.io/)公司出品的一个发布-订阅模式框架，它基于Google [Guava](https://github.com/google/guava)项目中的event bus模块开发，针对Android平台做了优化和加强。本文针对v1.3.6版本进行分析。
 
 <!-- more -->
 
@@ -218,7 +218,7 @@ private static final Map<Class<?>, Map<Class<?>, Set<Method>>> SUBSCRIBERS_CACHE
     new HashMap<Class<?>, Map<Class<?>, Set<Method>>>();
 ```
 
-`findAllProducers()`和`findAllSubscribers()`方法返回目标对象中的发布者和订阅者，它们先在缓存中查找目标类型的发布者和订阅者方法，如果找不到就调用`loadAnnotatedMethods()`方法加载并缓存这些方法，如果找到就把`Method`对象和目标实例封装成发布者和订阅者返货。
+`findAllProducers()`和`findAllSubscribers()`方法返回目标对象中的发布者和订阅者，它们先在缓存中查找目标类型的发布者和订阅者方法，如果找不到就调用`loadAnnotatedMethods()`方法加载并缓存这些方法，如果找到就把`Method`对象和目标实例封装成发布者和订阅者并返回。
 
 <br/>
 本文出自[2dxgujun](/)，转载时请注明出处及相应链接。

@@ -7,7 +7,7 @@ category:
 date: 2015-06-07
 ---
 
-[butterknife](https://github.com/JakeWharton/butterknife)是一个快速Android视图注入框架，它的开发者是大名鼎鼎的[Jake Wharton](http://jakewharton.com/)。
+[butterknife](https://github.com/JakeWharton/butterknife)是一个快速Android视图注入框架，它的开发者是大名鼎鼎的[Jake Wharton](http://jakewharton.com/)。本文针对v6.1.0版本进行分析。
 
 <!-- more -->
 
