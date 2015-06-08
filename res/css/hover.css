@@ -38,7 +38,8 @@ ul#navigation li a:hover{
 }
 ul#navigation li a span{
     letter-spacing:2px;
-    font-size:11px;
+    font-size:13px;
+	font-family:Microsoft YaHei;
     color:#60ACD8;
     text-shadow: 0 -1px 1px #fff;      
 }
