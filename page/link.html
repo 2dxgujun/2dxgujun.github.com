@@ -4,8 +4,16 @@ title: Link
 ---
 
 <link rel="stylesheet" href="/res/css/page.css">
-<h1 class="flink">友情链接</h1>
 
+<div class="post-main">
+<h3>我的朋友</h3>
+<br/>
+<table border="0">
 {% for link in site.data.link %}
-<a class="category-sub-title" href="{{ link.href }}" target="_blank" >{{ link.title }}</a><br/>
+<tr><td><a href="{{ link.href }}" target="_blank" >{{ link.title }}</a></td><td>— {{ link.desc }}</td></tr>
 {% endfor %}
+</table>
+
+</div>
+
+{% include duoshuo.html %}
