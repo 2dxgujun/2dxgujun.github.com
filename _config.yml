@@ -1,13 +1,13 @@
-﻿markdown: rdiscount
+﻿markdown: redcarpet
 highlighter: pygments
 permalink: post/:year/:month/:day/:title.html
-paginate: 6
+paginate: 8
 paginate_path: page/:num
 
 blog:
-    name:                                                JunGu
-    description:                                         给岁月以文明，给时光以生命
-    title:                                               Jun Gu
+    name:                                                Jun Gu
+    description:                                         To the time to life
+    title:                                               Jun Gu - Developer
     url:                                                 http://2dxgujun.com/
     duoshuo:                                             2dxgujun
     tongji:                                              2dxgujun
